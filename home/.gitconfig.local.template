@@ -1,0 +1,4 @@
+[user]
+	name = Foo Bar
+	email = foo@bar.com
+	signingkey = ABCDEFG123456789

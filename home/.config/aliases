@@ -1,0 +1,66 @@
+#!/bin/bash
+
+# Export path to custom scripts
+export PATH="$HOME/.bin:$PATH"
+
+# Shell
+alias c="clear"
+alias e="echo"
+alias ee="exit"
+alias r="reload" # defined in shell specific aliases
+alias rl="reload" # defined in shell specific aliases
+
+# Navigation
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+
+# ls (exa)
+alias ls="exa --group-directories-first --classify --no-user -al"
+alias lsc="exa --group-directories-first --classify --no-user --no-time --no-permissions --no-filesize -l"
+alias lsa="ls"
+alias lst="lsa --tree --ignore-glob 'node_modules|venv|dist|build|.git'"
+alias ls2="lst --level=2"
+alias ls3="lst --level=3"
+alias ls4="lst --level=4"
+
+# Docker
+alias dockerls="docker ps -a --format \"table {{.Names}} \t {{.Image}} \t {{.Status}}\""
+alias dockerls-ids="docker ps -a --format \"table {{.ID}} \t {{.Names}} \t {{.Image}} \t {{.Status}}\""
+alias dockerls-sizes="docker ps -a --format \"table {{.ID}} \t {{.Names}} \t {{.Image}} \t {{.Status}} \t {{.Size}}\""
+alias dockerls-ports="docker ps -a --format \"table {{.Names}} \t {{.State}} \t {{.Ports}}\""
+alias dkls="dockerls"
+alias dkid="dockerls-ids"
+alias dkpt="dockerls-ports"
+alias dksz="dockerls-sizes"
+
+# Git
+alias lg="lazygit"
+alias g="git"
+alias gs="git status"
+# -- See .gitconfig for aliases
+alias gl="git l"
+alias gg="git g"
+alias ga="git ga"
+
+# Homebrew
+alias b="brew"
+
+# Python
+alias p="pyenv" # defined in shell specific aliases
+alias de="deactivate"
+
+# z
+alias zl="z -lr" # Find using z based on text match rank
+alias zt="z -lt" # Find using z based on most recently visited
+
+# Vim / Neovim
+alias v="vim"
+alias n="nvim"
+
+# Misc
+alias f="find . -name"
+alias filetype="mdls -name kMDItemContentType -name kMDItemContentTypeTree -name kMDItemKind"
+alias size="stat -f \"%z bytes\""
+alias diskspace="df -P -kHl"
+alias ds="diskspace"

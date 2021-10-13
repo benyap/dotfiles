@@ -1,0 +1,6 @@
+#!/bin/bash
+
+brew update
+brew outdated | xargs brew fetch
+brew upgrade
+brew cleanup

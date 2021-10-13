@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
 _print_in_color() {
   printf "%b" \
     "$(tput setaf "$2" 2> /dev/null)" \
@@ -27,9 +30,17 @@ _print_in_yellow() {
   _print_in_color "$1" 3
 }
 
+_print_in_gray() {
+  _print_in_color "$1" 7
+}
+
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+
+print_line() {
+  echo
+}
 
 print_question() {
   _print_in_yellow "[?] $1"
@@ -41,6 +52,10 @@ print_info() {
 
 print_success() {
   _print_in_green "[✔] $1\n"
+}
+
+print_ok() {
+  _print_in_gray "[✔] $1\n"
 }
 
 print_warning() {
@@ -62,7 +77,7 @@ print_error_stream() {
 }
 
 print_result() {
-  if [ "$1" -eq 0 ]; then
+  if test "$1" -eq 0; then
     print_success "$2"
   else
     print_error "$2"
@@ -89,7 +104,7 @@ ask_for_sudo() {
 }
 
 ask_for_confirmation() {
-  print_question "$1 (y/n) "
+  print_question "$1 (Y/n) "
   read -r -n 1
   printf "\n"
 }
@@ -113,6 +128,10 @@ answer_is_yes() {
 
 cmd_exists() {
   command -v "$1" &> /dev/null
+}
+
+escape_path_containing_spaces() {
+  printf "%s" "$1" | sed 's/ /\\ /g'
 }
 
 

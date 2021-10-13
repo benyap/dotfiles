@@ -2,18 +2,13 @@
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-
-declare -r FILENAME="bootstrap.sh"
-
 declare -r REPOSITORY="benyap/dotfiles"
 declare -r UTILS_URL="https://raw.githubusercontent.com/$REPOSITORY/main/scripts/utils.sh"
 declare -r TARBALL_URL="https://github.com/$REPOSITORY/tarball/main"
 
-declare installDirectory="$HOME/.dotfiles"
-
+declare DEFAULT_INSTALL_DIRECTORY="$HOME/.dotfiles"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
 
 download() {
   local -r url="$1"
@@ -21,7 +16,6 @@ download() {
   curl --location --silent --show-error --output "$output" "$url" &> /dev/null
   return $?
 }
-
 
 extract() {
   local -r archive="$1"
@@ -40,11 +34,12 @@ extract() {
   return 1
 }
 
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 download_utils() {
   local -r tempFile="$(mktemp /tmp/XXXXX)"
 
-  # shellcheck source=/tmp/dotfiles-utils
+  # shellcheck source=/tmp/XXXXX
   download "$UTILS_URL" "$tempFile" \
       && source "$tempFile" \
       && rm -rf "$tempFile" \
@@ -53,10 +48,11 @@ download_utils() {
    return 1
 }
 
-
 download_source() {
   local -r tempFile="$(mktemp /tmp/XXXXX)"
   local -r prompt="Please specify another location for the dotfiles (path): "
+
+  local installDirectory="$DEFAULT_INSTALL_DIRECTORY"
 
   # Download latest source
   execute "download $TARBALL_URL $tempFile" "Download $REPOSITORY"
@@ -72,14 +68,14 @@ download_source() {
   fi
 
   # Ensure the install directory is available
-  while [ -e "$installDirectory" ]; do
+  while test -e "$installDirectory"; do
     ask_for_confirmation "$installDirectory already exists, do you want to overwrite it?"
     if answer_is_yes; then
       rm -rf "$installDirectory"
       break
     else
       installDirectory=""
-      while [ -z "$installDirectory" ]; do
+      while test -z "$installDirectory"; do
         ask "$prompt"
         installDirectory="$(get_answer)"
       done
@@ -95,12 +91,12 @@ download_source() {
   cd "$installDirectory/scripts" || return 1
 }
 
-
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-
 main() {
-  # Ensure that the following actions are made relative to this file's path
+  declare -r filename="bootstrap.sh"
+
+  # Execute relative to location of this file
   cd "$(dirname "${BASH_SOURCE[0]}")" || exit 1
 
   # Load in utils
@@ -110,12 +106,14 @@ main() {
     download_utils || exit 1
   fi
 
-  # Check if this script was run directly (this will be empty if run using bash inline).
-  # If not, download the dotfiles repository and navigate to it.
-  echo "${BASH_SOURCE[0]}" | grep $FILENAME &> /dev/null || download_source
+  # Check if this script was run by sourcing inline (i.e. from README instructions).
+  # If it was, download the dotfiles repository and navigate to it.
+  echo "${BASH_SOURCE[0]}" | grep $filename &> /dev/null || download_source
 
-  # Run the init script
-  ./init.sh
+  # Run the install script
+  ./install.sh
 }
 
 main
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

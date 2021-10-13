@@ -1,0 +1,40 @@
+{
+  "workbench.colorTheme": "One Dark Pro",
+  "security.workspace.trust.untrustedFiles": "open",
+  "terminal.integrated.defaultProfile.osx": "fish",
+  "editor.fontFamily": "Menlo, 'Courier New', monospace",
+  "editor.codeLens": false,
+  "explorer.confirmDragAndDrop": false,
+  "prettier.proseWrap": "always",
+  "editor.formatOnSave": true,
+  "files.associations": {
+    "fish_variables": "fish",
+    ".env": "ini"
+  },
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "terminal.external.osxExec": "kitty.app",
+  "terminal.integrated.bellDuration": 10000,
+  "editor.tabSize": 2,
+  "terminal.integrated.fontFamily": "'MesloLGS Nerd Font', Menlo, 'Courier New', monospace",
+  "editor.renderControlCharacters": true,
+  "editor.minimap.enabled": false,
+  "editor.suggest.showWords": false,
+  "todohighlight.keywords": [
+    "TODO:",
+    "FIXME:",
+    {
+      "text": "TEMP:",
+      "color": "black",
+      "backgroundColor": "cyan",
+      "overviewRulerColor": "cyan"
+    },
+    {
+      "text": "HACK:",
+      "color": "black",
+      "backgroundColor": "lightpink",
+      "overviewRulerColor": "lightpink"
+    }
+  ],
+  "window.zoomLevel": 1
+}
