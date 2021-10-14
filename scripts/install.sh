@@ -83,6 +83,7 @@ main() {
   install_dbeaver
   install_docker
   install_forklift
+  install_gpgsuite
   install_iina # prefer this over vlc
   install_kitty
   install_postman

@@ -11,6 +11,7 @@ source apps/1password.sh
 source apps/dbeaver.sh
 source apps/docker.sh
 source apps/forklift.sh
+source apps/gpgsuite.sh
 source apps/iina.sh
 source apps/kitty.sh
 source apps/megasync.sh
