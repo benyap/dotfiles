@@ -97,6 +97,9 @@ _set_finder_defaults() {
 
   # Show the /Volumes folder
   sudo chflags nohidden /Volumes
+
+  # Enable key repeat
+  defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool true
 }
 
 _set_activity_monitor_defaults() {
