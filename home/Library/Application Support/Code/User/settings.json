@@ -36,5 +36,11 @@
       "overviewRulerColor": "lightpink"
     }
   ],
-  "window.zoomLevel": 1
+  "window.zoomLevel": 1,
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python"
+  },
+  "[xml]": {
+    "editor.defaultFormatter": "DotJoshJohnson.xml"
+  }
 }
