@@ -18,7 +18,7 @@ set -gx GPG_TTY (tty)
 
 # Define fish specific aliases
 alias reload="source ~/.config/fish/config.fish"
-alias pyenv="source venv/bin/activate"
+alias pyenv="source venv/bin/activate.fish"
 
 # Source aliases
 [ -f ~/.config/aliases ] && source ~/.config/aliases;
