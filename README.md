@@ -46,6 +46,20 @@ automate with scripts:
 - Install [Monosnap](https://monosnap.com/)
 - Import [Raycast](https://raycast.com) configuration from
   `$HOME/.config/raycast/config.rayconfig`
+- Install
+  [LunarVim](https://www.lunarvim.org/01-installing.html#prerequisites) - I've
+  found that it's just easier to use the installation wizard, though you will
+  need to symlink `~/.config/lvim/config.lua` if you want to track changes
+  (automated with `scripts/post.sh`)
+
+### Post install
+
+You may want to run this to do some additional symlinking after completing the
+manual steps. Navigate to the root of the project and run the `post.sh` script:
+
+```sh
+./scripts/post.sh
+```
 
 ### Updating
 

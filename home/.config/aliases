@@ -54,8 +54,9 @@ alias de="deactivate"
 alias zl="z -lr" # Find using z based on text match rank
 alias zt="z -lt" # Find using z based on most recently visited
 
-# Vim / Neovim
-alias v="vim"
+# Neovim / LunarVim
+export PATH="$HOME/.local/bin:$PATH"
+alias v="lvim"
 alias n="nvim"
 
 # Misc

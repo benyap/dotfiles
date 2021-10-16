@@ -50,5 +50,6 @@ _install_vscode_plugins() {
   _install_vscode_plugin "ShellCheck" "timonwong.shellcheck"
   _install_vscode_plugin "Highlight Matching Tag" "vincaslt.highlight-matching-tag"
   _install_vscode_plugin "TODO Highlight" "wayou.vscode-todo-highlight"
+  _install_vscode_plugin "VimL" "xadillax.viml"
   _install_vscode_plugin "One Dark Pro" "zhuangtongfa.material-theme"
 }

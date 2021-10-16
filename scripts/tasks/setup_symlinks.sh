@@ -5,13 +5,13 @@ cd "$(dirname "${BASH_SOURCE[0]}")" || exit 1
 
 setup_symlinks() {
   # Directories that need to exist for symlinks to not die
-  local -ar DIRS=(
+  local -ar directories=(
     "Library/Application Support/Code/User"
     ".config"
   )
 
   # Files or directories to symlink
-  local -ar LINKS=(
+  local -ar links=(
     ".bin"
     ".config/antibody"
     ".config/fish"
@@ -26,11 +26,18 @@ setup_symlinks() {
     ".zshrc.local"
   )
 
+  _create_directories "${directories[@]}"
+  _create_symlinks "${links[@]}"
+}
+
+_create_directories() {
+  local -r dirs="$1"
+
   local path=""
   local pathEscaped=""
 
   # Create directories for symlinks
-  for dir in "${DIRS[@]}"; do
+  for dir in "${dirs[@]}"; do
     path="$HOME/$dir"
     pathEscaped="$(escape_path_containing_spaces "$path")"
 
@@ -40,7 +47,11 @@ setup_symlinks() {
       print_ok "Directory exists $path"
     fi
   done
+}
 
+_create_symlinks() {
+  local -r symlinks="$1"
+ 
   local link=""
   local sourceFile=""
   local targetFile=""
@@ -48,7 +59,7 @@ setup_symlinks() {
   local targetFileEscaped=""
 
   # Create symlinks
-  for link in "${LINKS[@]}"; do
+  for link in "${symlinks[@]}"; do
     sourceFile="$(cd .. && pwd)/home/$link"
     targetFile="$HOME/$link"
 
