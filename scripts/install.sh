@@ -107,7 +107,6 @@ main() {
   setup_symlinks
   setup_terminal_theme
   setup_default_shell
-  setup_macos
   print_info "Finished configuring system"
   print_line
 

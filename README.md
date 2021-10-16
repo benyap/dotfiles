@@ -93,7 +93,6 @@ Does the grunt work of setting everything up.
 6. Install apps using Homebrew Cask.
 7. Symlink configurations from the repository to where they should live in
    `$HOME`.
-8. Set some opininated system configurations.
 
 ## If you want to fork this
 
