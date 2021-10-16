@@ -29,6 +29,7 @@ source utilities/awscli.sh
 source utilities/bfg.sh
 source utilities/duti.sh
 source utilities/exa.sh
+source utilities/fd.sh
 source utilities/fish.sh
 source utilities/fonts.sh
 source utilities/gcloud.sh
@@ -38,6 +39,7 @@ source utilities/neovim.sh
 source utilities/node14.sh
 source utilities/nvm.sh
 source utilities/python.sh
+source utilities/ripgrep.sh
 source utilities/terraform.sh
 source utilities/vim.sh
 source utilities/zsh.sh

@@ -63,6 +63,7 @@ main() {
   install_bfg
   install_duti
   install_exa
+  install_fd
   install_fonts
   install_fish
   install_gcloud
@@ -72,6 +73,7 @@ main() {
   install_keg_only_node14
   install_nvm
   install_python
+  install_ripgrep
   install_terraform
   install_vim
   install_zsh
