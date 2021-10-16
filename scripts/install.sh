@@ -68,6 +68,7 @@ main() {
   install_fish
   install_gcloud
   install_gnupg
+  install_lazydocker
   install_lazygit
   install_neovim
   install_keg_only_node14

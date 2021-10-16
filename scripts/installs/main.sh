@@ -34,6 +34,7 @@ source utilities/fish.sh
 source utilities/fonts.sh
 source utilities/gcloud.sh
 source utilities/gnupg.sh
+source utilities/lazydocker.sh
 source utilities/lazygit.sh
 source utilities/neovim.sh
 source utilities/node14.sh

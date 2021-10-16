@@ -25,6 +25,7 @@ alias ls3="lst --level=3"
 alias ls4="lst --level=4"
 
 # Docker
+alias ld="lazydocker"
 alias dockerls="docker ps -a --format \"table {{.Names}} \t {{.Image}} \t {{.Status}}\""
 alias dockerls-ids="docker ps -a --format \"table {{.ID}} \t {{.Names}} \t {{.Image}} \t {{.Status}}\""
 alias dockerls-sizes="docker ps -a --format \"table {{.ID}} \t {{.Names}} \t {{.Image}} \t {{.Status}} \t {{.Size}}\""
