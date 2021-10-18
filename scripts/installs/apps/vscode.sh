@@ -4,6 +4,7 @@
 
 install_vscode() {
   brew_install_app "Visual Studio Code" "visual-studio-code"
+  execute "defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false" "Enable key repeat for Visual Studio Code"
   _install_vscode_plugins
 }
 
@@ -47,8 +48,10 @@ _install_vscode_plugins() {
   _install_vscode_plugin "Color Highlight" "naumovs.color-highlight"
   _install_vscode_plugin "Material Icon Theme" "pkief.material-icon-theme"
   _install_vscode_plugin "Fish" "skyapps.fish-vscode"
+  _install_vscode_plugin "Which Key" "vspacecode.whichkey"
   _install_vscode_plugin "ShellCheck" "timonwong.shellcheck"
   _install_vscode_plugin "Highlight Matching Tag" "vincaslt.highlight-matching-tag"
+  _install_vscode_plugin "Vim" "vscodevim.vim"
   _install_vscode_plugin "TODO Highlight" "wayou.vscode-todo-highlight"
   _install_vscode_plugin "VimL" "xadillax.viml"
   _install_vscode_plugin "One Dark Pro" "zhuangtongfa.material-theme"

@@ -19,6 +19,7 @@ setup_symlinks() {
     ".config/raycast"
     ".config/aliases"
     "Library/Application Support/Code/User/settings.json"
+    "Library/Application Support/Code/User/keybindings.json"
     ".gitconfig"
     ".gitconfig.local"
     ".gitignore"

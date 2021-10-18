@@ -42,5 +42,296 @@
   },
   "[xml]": {
     "editor.defaultFormatter": "DotJoshJohnson.xml"
-  }
+  },
+  // -- Vim settings
+  "vim.highlightedyank.enable": true,
+  "vim.smartRelativeLine": true,
+  "vim.hlsearch": true,
+  "vim.camelCaseMotion.enable": true,
+  "vim.sneak": true,
+  "vim.sneakReplacesF": true,
+  "vim.useSystemClipboard": true,
+  "vim.easymotion": true,
+  "vim.visualstar": true,
+  "vim.showMarksInGutter": true,
+  // -- Vim remaps
+  "vim.leader": "<space>",
+  "vim.normalModeKeyBindingsNonRecursive": [
+    // Show whichkey
+    {
+      "before": ["<C-space>"],
+      "commands": ["whichkey.show"]
+    },
+    // Disable search highlight
+    {
+      "before": ["<C-n>"],
+      "commands": [":nohl"]
+    },
+    // Indentation
+    {
+      "before": ["<tab>"],
+      "commands": ["editor.action.indentLines"]
+    },
+    {
+      "before": ["<S-tab>"],
+      "commands": ["editor.action.outdentLines"]
+    },
+    // Undo / redo
+    {
+      "before": ["u"],
+      "commands": ["undo"]
+    },
+    {
+      "before": ["<C-r>"],
+      "commands": ["redo"]
+    },
+    // Editor groups
+    {
+      "before": ["<S-h>"],
+      "commands": ["workbench.action.focusNextGroup"]
+    },
+    {
+      "before": ["<S-l>"],
+      "commands": ["workbench.action.focusNextGroup"]
+    },
+    {
+      "before": ["<S-j>"],
+      "commands": ["workbench.action.focusBelowGroup"]
+    },
+    {
+      "before": ["<S-k>"],
+      "commands": ["workbench.action.focusAboveGroup"]
+    },
+    {
+      "before": ["<C-h>"],
+      "commands": ["workbench.action.moveEditorToPreviousGroup"]
+    },
+    {
+      "before": ["<C-l>"],
+      "commands": ["workbench.action.moveEditorToNextGroup"]
+    },
+    {
+      "before": ["<C-j>"],
+      "commands": ["workbench.action.moveEditorToBelowGroup"]
+    },
+    {
+      "before": ["<C-k>"],
+      "commands": ["workbench.action.moveEditorToAboveGroup"]
+    },
+    {
+      "before": ["<C-w>"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    // Show whichkey
+    {
+      "before": ["<C-space>"],
+      "commands": ["whichkey.show"]
+    },
+    // Copy lines
+    {
+      "before": ["<C-j>"],
+      "commands": ["editor.action.copyLinesUpAction"]
+    },
+    {
+      "before": ["<C-k>"],
+      "commands": ["editor.action.copyLinesDownAction"]
+    },
+    // Indentation
+    {
+      "before": ["<tab>"],
+      "commands": ["editor.action.indentLines"]
+    },
+    {
+      "before": ["<S-tab>"],
+      "commands": ["editor.action.outdentLines"]
+    }
+  ],
+  // -- Vim whichkey
+  "whichkey.bindings": [
+    {
+      "key": " ",
+      "name": "Command palette",
+      "commands": ["workbench.action.showCommands"]
+    },
+    {
+      "key": "c",
+      "name": "Save and close buffer",
+      "commands": [
+        "workbench.action.files.save",
+        "workbench.action.closeActiveEditor"
+      ]
+    },
+    {
+      "key": "s",
+      "name": "Save buffer",
+      "commands": ["workbench.action.files.save"]
+    },
+    {
+      "key": "b",
+      "name": "Show all buffers",
+      "commands": ["workbench.action.showAllEditors"]
+    },
+    {
+      "key": "f",
+      "name": "Quick open file",
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "key": "e",
+      "name": "File explorer",
+      "commands": ["workbench.explorer.fileView.focus"]
+    },
+    {
+      "key": "t",
+      "name": "Open new terminal in panel",
+      "commands": ["workbench.action.terminal.new"]
+    },
+    {
+      "key": "T",
+      "name": "Open new terminal in editor",
+      "commands": [
+        "workbench.action.terminal.new",
+        "workbench.action.terminal.focus",
+        "workbench.action.terminal.moveToEditor"
+      ]
+    },
+    {
+      "key": "/",
+      "name": "Toggle comment",
+      "commands": ["editor.action.commentLine"]
+    },
+    {
+      "key": "E",
+      "name": "Toggle sidebar",
+      "commands": ["workbench.action.toggleSidebarVisibility"]
+    },
+    {
+      "key": "P",
+      "name": "Format document",
+      "commands": [
+        "editor.action.formatDocument",
+        "prettier.forceFormatDocument"
+      ]
+    },
+    // File operations
+    {
+      "key": "F",
+      "name": "+ File",
+      "bindings": [
+        {
+          "key": "w",
+          "name": "Open active in new window",
+          "commands": ["workbench.action.files.showOpenedFileInNewWindow"]
+        },
+        {
+          "key": "n",
+          "name": "New file",
+          "commands": ["workbench.action.files.newUntitledFile"]
+        },
+        {
+          "key": "l",
+          "name": "Change file language",
+          "type": "command",
+          "command": "workbench.action.editor.changeLanguageMode"
+        },
+        {
+          "key": "e",
+          "name": "Show file in explorer",
+          "type": "command",
+          "command": "workbench.files.action.showActiveFileInExplorer"
+        },
+        {
+          "key": "r",
+          "name": "Rename file",
+          "commands": [
+            "workbench.files.action.showActiveFileInExplorer",
+            "renameFile"
+          ]
+        },
+        {
+          "key": "S",
+          "name": "Save all files",
+          "command": "workbench.action.files.saveAll"
+        },
+        {
+          "key": "R",
+          "name": "Open recent",
+          "command": "workbench.action.openRecent"
+        }
+      ]
+    },
+    // Window operations
+    {
+      "key": "w",
+      "name": "+ Window",
+      "bindings": [
+        {
+          "key": "s",
+          "name": "Split editor below",
+          "type": "command",
+          "command": "workbench.action.splitEditorDown"
+        },
+        {
+          "key": "v",
+          "name": "Split editor right",
+          "type": "command",
+          "command": "workbench.action.splitEditor"
+        },
+        {
+          "key": "m",
+          "name": "Maximize editor group",
+          "type": "command",
+          "command": "workbench.action.minimizeOtherEditors"
+        },
+        {
+          "key": "M",
+          "name": "Maximize editor group and hide side bar",
+          "type": "command",
+          "command": "workbench.action.maximizeEditor"
+        },
+        {
+          "key": "=",
+          "name": "Reset editor group sizes",
+          "type": "command",
+          "command": "workbench.action.evenEditorWidths"
+        },
+        {
+          "key": "z",
+          "name": "Combine all editors",
+          "type": "command",
+          "command": "workbench.action.joinAllGroups"
+        },
+        {
+          "key": "d",
+          "name": "Close editor group",
+          "type": "command",
+          "command": "workbench.action.closeEditorsInGroup"
+        },
+        {
+          "key": "u",
+          "name": "Reopen last closed editor",
+          "type": "command",
+          "command": "workbench.action.reopenClosedEditor"
+        },
+        {
+          "key": "X",
+          "name": "Close all editor groups",
+          "type": "command",
+          "command": "workbench.action.closeAllGroups"
+        }
+      ]
+    },
+    {
+      "key": "R",
+      "name": "Reload window",
+      "commands": ["workbench.action.reloadWindow"]
+    },
+    {
+      "key": "?",
+      "name": "Search keybindings",
+      "commands": ["whichkey.searchBindings"]
+    }
+  ]
 }
