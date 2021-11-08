@@ -1,0 +1,14 @@
+{
+  "name": "dotfiles",
+  "version": "0.3.0",
+  "repository": "git@github.com:benyap/dotfiles.git",
+  "author": "Ben Yap <contact@benyap.com>",
+  "license": "MIT",
+  "scripts": {
+    "release": "release-it"
+  },
+  "devDependencies": {
+    "@release-it/conventional-changelog": "3.3.0",
+    "release-it": "14.11.6"
+  }
+}
