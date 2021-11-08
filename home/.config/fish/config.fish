@@ -16,6 +16,9 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 # Export GPG
 set -gx GPG_TTY (tty)
 
+# Source Google CLoud SDK autocomplete
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc"
+
 # Define fish specific aliases
 alias reload="source ~/.config/fish/config.fish"
 alias pyenv="source venv/bin/activate.fish"

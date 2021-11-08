@@ -39,6 +39,7 @@ alias dksz="dockerls-sizes"
 alias lg="lazygit"
 alias g="git"
 alias gs="git status"
+alias gundo="git reset --soft HEAD^"
 # -- See .gitconfig for aliases
 alias gl="git l"
 alias gg="git g"
@@ -49,6 +50,8 @@ alias b="brew"
 
 # Python
 alias p="pyenv" # defined in shell specific aliases
+alias pinit="python3 -m venv venv"
+alias pinstall="pip3 install -r requirements.txt"
 alias de="deactivate"
 
 # z

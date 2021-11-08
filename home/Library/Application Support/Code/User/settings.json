@@ -1,15 +1,20 @@
 {
   "workbench.colorTheme": "One Dark Pro",
+  "workbench.editor.restoreViewState": false,
   "security.workspace.trust.untrustedFiles": "open",
   "terminal.integrated.defaultProfile.osx": "fish",
   "editor.fontFamily": "Menlo, 'Courier New', monospace",
   "editor.codeLens": false,
-  "explorer.confirmDragAndDrop": false,
-  "prettier.proseWrap": "always",
   "editor.formatOnSave": true,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.openEditors.visible": 0,
+  "prettier.proseWrap": "always",
   "files.associations": {
     "fish_variables": "fish",
-    ".env": "ini"
+    ".env": "ini",
+    ".env.uat": "ini",
+    ".env.dev": "ini",
+    ".env.template": "ini"
   },
   "workbench.iconTheme": "material-icon-theme",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -36,12 +41,27 @@
       "overviewRulerColor": "lightpink"
     }
   ],
-  "window.zoomLevel": 1,
+  "json.maxItemsComputed": 50000,
+  "window.newWindowDimensions": "maximized",
   "[python]": {
     "editor.defaultFormatter": "ms-python.python"
   },
   "[xml]": {
     "editor.defaultFormatter": "DotJoshJohnson.xml"
+  },
+  "[typescriptreact]": {
+    "tailwindCSS.experimental.classRegex": [
+      // Matches with multiline object properties such as
+      // {
+      //    inputClass:
+      //      "bg-gray-200 text-gray-800 " +
+      //      "hover:bg-gray-300 active:bg-gray-300",
+      // }
+      //
+      ["\\s+[a-zA-Z]+Class:[\\s\\n]+\"([^,]+)\"+"],
+      // For matching HeadlessUI's transition and custom transition props
+      ["(?:enter|leave)(?:From|To|Duration)?=\\s*(?:\"|')([^(?:\"|')]*)"]
+    ]
   },
   // -- Vim settings
   "vim.highlightedyank.enable": true,
@@ -59,7 +79,7 @@
   "vim.normalModeKeyBindingsNonRecursive": [
     // Show whichkey
     {
-      "before": ["<C-space>"],
+      "before": ["<space>"],
       "commands": ["whichkey.show"]
     },
     // Disable search highlight
@@ -84,6 +104,31 @@
     {
       "before": ["<C-r>"],
       "commands": ["redo"]
+    },
+    // Definition nagivation
+    {
+      "before": ["g", "D"],
+      "commands": ["editor.action.peekDefinition"]
+    },
+    {
+      "before": ["g", "r"],
+      "commands": ["editor.action.referenceSearch.trigger"]
+    },
+    {
+      "before": ["g", "b"],
+      "commands": ["workbench.action.navigateBack"]
+    },
+    {
+      "before": ["g", "p"],
+      "commands": ["editor.action.marker.next"]
+    },
+    {
+      "before": ["g", "P"],
+      "commands": ["editor.action.marker.prev"]
+    },
+    {
+      "before": ["g", "R"],
+      "commands": ["editor.action.rename"]
     },
     // Editor groups
     {
@@ -151,7 +196,7 @@
   // -- Vim whichkey
   "whichkey.bindings": [
     {
-      "key": " ",
+      "key": "p",
       "name": "Command palette",
       "commands": ["workbench.action.showCommands"]
     },
@@ -333,5 +378,6 @@
       "name": "Search keybindings",
       "commands": ["whichkey.searchBindings"]
     }
-  ]
+  ],
+  "window.zoomLevel": 1
 }
