@@ -58,10 +58,10 @@ setup_iina_file_associations() {
   local -r iinaName="IINA"
   _setup_file_association "public.mpeg" "$iinaId" "$iinaName"
   _setup_file_association "public.mpeg-2-video" "$iinaId" "$iinaName"
-  _setup_file_association "public.mpeg-2-transport-stream" "$iinaId" "$iinaName"
+  # _setup_file_association "public.mpeg-2-transport-stream" "$iinaId" "$iinaName" # messes up Typescript files
   _setup_file_association "public.mpeg-4" "$iinaId" "$iinaName"
   _setup_file_association "public.mpeg-4-audio" "$iinaId" "$iinaName"
-  _setup_file_association "public.avchd-mpeg-2-transport-stream" "$iinaId" "$iinaName"
+  # _setup_file_association "public.avchd-mpeg-2-transport-stream" "$iinaId" "$iinaName" # messes up Typescript files
   _setup_file_association "public.ac3-audio" "$iinaId" "$iinaName"
   _setup_file_association "public.3gpp" "$iinaId" "$iinaName"
   _setup_file_association "public.aiff-audio" "$iinaId" "$iinaName"

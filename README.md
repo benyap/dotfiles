@@ -43,7 +43,6 @@ bash (curl -Ls https://raw.github.com/benyap/dotfiles/main/scripts/bootstrap.sh 
 A couple of other useful things that I also do but couldn't figure out how to
 automate with scripts:
 
-- Install [Monosnap](https://monosnap.com/)
 - Import [Raycast](https://raycast.com) configuration from
   `$HOME/.config/raycast/config.rayconfig`
 - Install
@@ -124,7 +123,7 @@ it on your machine:
 And in case it wasn't obvious, the `home` directory in this project more or less
 tries to mirror what would be symlinked to your actual home directory. It's
 pretty easy to add more things you want to symlink - have a look at
-`scripts/tasks/setup_symlinks.sh`.
+`scripts/tasks/setup/setup_symlinks.sh`.
 
 ## Check these out
 
@@ -138,6 +137,7 @@ some code) from to build my own configuration. Lots of cool ideas in these.
 - https://github.com/gf3/dotfiles
 - https://gist.github.com/shreeve/188ee4a8dff52d1000777364101c133d
 - https://sourabhbajaj.com/mac-setup
+- https://github.com/benedictong42/dotfiles
 
 ## License
 

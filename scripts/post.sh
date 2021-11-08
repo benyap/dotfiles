@@ -13,7 +13,6 @@ init() {
 
   # Load utils and functions
   source utils.sh && cd "$startDir" || exit 1
-  source installs/main.sh && cd "$startDir" || exit 1
   source tasks/main.sh && cd "$startDir" || exit 1
 
   print_line
@@ -36,8 +35,8 @@ main() {
   ask_for_sudo
   print_line
 
-  print_info "Installing system configuration..."
-  setup_symlinks_post
+  print_info "Setting up system configuration..."
+  run_all_setup_functions_in_directory "tasks/setup_post"
   print_info "Finished configuring system"
   print_line
 

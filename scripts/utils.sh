@@ -201,3 +201,39 @@ show_spinner() {
     printf "\r"
   done
 }
+
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+source_all_sh_files_in_directory() {
+  local -r directory="$1"
+  for file in "$directory"/*; do
+    if [ "${file: -3}" == ".sh" ]; then
+      # shellcheck source=/dev/null
+      source "$file"
+    fi
+  done
+}
+
+run_all_install_functions_in_directory() {
+  local -r directory="$1"
+  local functions
+  for file in "$directory"/*; do    
+    functions="$(sed -E -n 's/^function *([A-Za-z0-9_]+) *\{/\1/p; s/^(install_[A-Za-z0-9_]+) *\(\) *\{/\1/p' $file)"
+    for function in "${functions[@]}"; do        
+      eval "$function"
+    done    
+  done
+}
+
+run_all_setup_functions_in_directory() {
+  local -r directory="$1"
+  local functions
+  for file in  "$directory"/*;do    
+    functions="$(sed -E -n 's/^function *([A-Za-z0-9_]+) *\{/\1/p; s/^(setup_[A-Za-z0-9_]+) *\(\) *\{/\1/p' $file)"
+    for function in "${functions[@]}"; do        
+      eval "$function"
+    done    
+  done
+}

@@ -33,6 +33,7 @@ _install_vscode_plugins() {
   _install_vscode_plugin "Color Picker" "anseki.vscode-color"
   _install_vscode_plugin "Tailwind CSS IntelliSense" "bradlc.vscode-tailwindcss"
   _install_vscode_plugin "Firestore Rules" "chflick.firecode"
+  _install_vscode_plugin "ESLint" "dbaeumer.vscode-eslint"
   _install_vscode_plugin "XML Tools" "dotjoshjohnson.xml"
   _install_vscode_plugin "GitLens" "eamodio.gitlens"
   _install_vscode_plugin "Prettier" "esbenp.prettier-vscode"

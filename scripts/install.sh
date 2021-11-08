@@ -21,7 +21,6 @@ init() {
 
   # Load utils and functions
   source utils.sh && cd "$startDir" || exit 1
-  source installs/main.sh && cd "$startDir" || exit 1
   source tasks/main.sh && cd "$startDir" || exit 1
 
   print_line
@@ -48,6 +47,7 @@ main() {
   install_xcode_command_line_tools
   install_homebrew
   install_git
+  install_mas
   opt_out_of_hombrew_analytics
   print_info "Finished installing core tools"
   print_line
@@ -58,63 +58,19 @@ main() {
   print_line
 
   print_info "Installing utilities..."
-  install_antibody
-  install_awscli
-  install_bfg
-  install_duti
-  install_exa
-  install_fd
-  install_fonts
-  install_fish
-  install_gcloud
-  install_gnupg
-  install_lazydocker
-  install_lazygit
-  install_neovim
-  install_keg_only_node14
-  install_nvm
-  install_python
-  install_ripgrep
-  install_terraform
-  install_vim
-  install_zsh
+  run_all_install_functions_in_directory "tasks/install_utilities"
   print_info "Finished installing utilities"
   print_line
 
   print_info "Installing applications..."
-  install_1password
-  install_dbeaver
-  install_docker
-  install_forklift
-  install_gpgsuite
-  install_iina # prefer this over vlc
-  install_kitty
-  install_postman
-  install_megasync
-  install_raycast
-  install_rectangle
-  install_vscode
+  run_all_install_functions_in_directory "tasks/install_apps_brew"
+  run_all_install_functions_in_directory "tasks/install_apps_mas"
   print_info "Finished installing applications"
   print_line
 
-  print_info "Installing browsers..."
-  install_chrome
-  install_firefox
-  print_info "Finished installing browsers"
-  print_line
-
-  print_info "Installing system configuration..."
-  setup_create_local_defaults
-  setup_symlinks
-  setup_terminal_theme
-  setup_default_shell
+  print_info "Setting up system configuration..."
+  run_all_setup_functions_in_directory "tasks/setup"
   print_info "Finished configuring system"
-  print_line
-
-  print_info "Installing file associations..."
-  setup_vscode_file_associations
-  setup_iina_file_associations
-  print_info "Finished configuring file associations"
   print_line
 
   print_success "🎉 System set up complete! (check README for remaining manual steps)"

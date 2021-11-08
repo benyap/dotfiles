@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Execute relative to location of this file
-cd "$(dirname "${BASH_SOURCE[0]}")" || exit 1
-
 setup_symlinks() {
   # Directories that need to exist for symlinks to not die
   local -ar directories=(

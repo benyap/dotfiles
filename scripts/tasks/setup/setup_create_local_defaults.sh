@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# Execute relative to location of this file
-cd "$(dirname "${BASH_SOURCE[0]}")" || exit 1
-
-
 setup_create_local_defaults() {
   # These files are gitignored, so it's helpful to create them for new installs
   local -ar FILES=(
