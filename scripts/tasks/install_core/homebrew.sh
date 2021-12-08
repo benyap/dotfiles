@@ -22,6 +22,11 @@ install_homebrew() {
     print_ok "Homebrew already installed"
   fi
 
+  # Some standard taps
+  brew_tap "homebrew/core" "homebrew/core"
+  brew_tap "homebrew/cask" "homebrew/cask"
+  brew_tap "homebrew/cask-versions" "homebrew/cask-versions"
+
   brew_update
   brew_upgrade
   brew_cleanup
