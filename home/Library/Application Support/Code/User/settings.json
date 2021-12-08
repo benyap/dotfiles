@@ -25,6 +25,7 @@
   "editor.renderControlCharacters": true,
   "editor.minimap.enabled": false,
   "editor.suggest.showWords": false,
+  "auto-close-tag.disableOnLanguage": ["typescript"],
   "todohighlight.keywords": [
     "TODO:",
     "FIXME:",
