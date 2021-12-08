@@ -13,20 +13,29 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+# Load Google CLoud SDK autocomplete
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc"
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 # Export GPG
 set -gx GPG_TTY (tty)
 
-# Source Google CLoud SDK autocomplete
-source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc"
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Set path for programs in ~/.bin
+set PATH $HOME/.bin/apache-maven-3.8.4/bin $PATH
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # Define fish specific aliases
-alias reload="source ~/.config/fish/config.fish"
+alias reload="source $HOME/.config/fish/config.fish"
 alias pyenv="source venv/bin/activate.fish"
 
 # Source aliases
-[ -f ~/.config/aliases ] && source ~/.config/aliases;
+[ -f $HOME/.config/aliases ] && source $HOME/.config/aliases;
 
 # Source local config if it exists
-[ -f ~/.config/fish/config.fish.local ] && source ~/.config/fish/config.fish.local;
+[ -f $HOME/.config/fish/config.fish.local ] && source $HOME/.config/fish/config.fish.local;
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
