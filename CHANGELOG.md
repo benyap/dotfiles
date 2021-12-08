@@ -1,3 +1,12 @@
+## [0.5.0](https://github.com/benyap/dotfiles/compare/v0.4.0...v0.5.0) (2021-12-08)
+
+
+### Features
+
+* add openjdk and jenv ([9bf7b46](https://github.com/benyap/dotfiles/commit/9bf7b468deb05f9af5ab2744384802bbc0de8fb9))
+* ignore directories in .bin ([ab4ffec](https://github.com/benyap/dotfiles/commit/ab4ffecceab45c6435ec485e20dbf35f619710f4))
+* **vscode:** add new plugins ([07ab917](https://github.com/benyap/dotfiles/commit/07ab91737c7f4c310af67af4bb8601a698d5f8b3))
+
 ## [0.4.0](https://github.com/benyap/dotfiles/compare/v0.3.0...v0.4.0) (2021-11-08)
 
 
