@@ -25,3 +25,6 @@ $RECYCLE.BIN/
 # Custom
 *.backup
 *.old
+
+# fish
+fishd.tmp.*

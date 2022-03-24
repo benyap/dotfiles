@@ -380,5 +380,9 @@
       "commands": ["whichkey.searchBindings"]
     }
   ],
+  "prettier.printWidth": 100,
+  "files.exclude": {
+    "**/__pycache__": true
+  },
   "window.zoomLevel": 1
 }

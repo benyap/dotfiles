@@ -23,9 +23,15 @@ set -gx GPG_TTY (tty)
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# Load jEnv
-set PATH $HOME/.jenv.bin $PATH
-status --is-interactive; and source (jenv init -|psub)
+# Load jenv (Java env manager)
+# Disabled as not really used at the moment
+# set PATH $HOME/.jenv.bin $PATH
+# status --is-interactive; and source (jenv init -|psub)
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Load Python 3.8
+set PATH /usr/local/opt/python@3.8/bin $PATH
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
