@@ -9,5 +9,8 @@
 # @raycast.icon ../images/vscode.png
 # @raycast.packageName Visual Studio Code
 # @raycast.argument1 { "type": "text", "placeholder": "path" }
-
+#
+# Documentation:
+# @raycast.description Opens path in VSCode
+ 
 code ~/"$1"

@@ -2,7 +2,7 @@
 
 # Required parameters:
 # @raycast.schemaVersion 1
-# @raycast.title Open in VS Code
+# @raycast.title Open with Code
 # @raycast.mode silent
 #
 # Optional parameters:
@@ -10,7 +10,7 @@
 # @raycast.packageName Visual Studio Code
 #
 # Documentation:
-# @raycast.description Opens current topmost directory in VSCode
+# @raycast.description Opens current directory in VSCode
 # @raycast.author chohner
 # @raycast.authorURL https://github.com/chohner
 
