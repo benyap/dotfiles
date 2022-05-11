@@ -30,6 +30,7 @@ _install_vscode_plugin() {
 }
 
 _install_vscode_plugins() {
+  _install_vscode_plugin "PDF Preview" "analytic-signal.preview-pdf"
   _install_vscode_plugin "Color Picker" "anseki.vscode-color"
   _install_vscode_plugin "Tailwind CSS IntelliSense" "bradlc.vscode-tailwindcss"
   _install_vscode_plugin "Better TOML" "bungcip.better-toml"
