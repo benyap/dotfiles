@@ -3,18 +3,22 @@
   "workbench.editor.restoreViewState": false,
   "security.workspace.trust.untrustedFiles": "open",
   "terminal.integrated.defaultProfile.osx": "fish",
-  "editor.fontFamily": "Menlo, 'Courier New', monospace",
+  "editor.fontFamily": "'Hack Nerd Font', Menlo, monospace",
   "editor.codeLens": false,
-  "editor.formatOnSave": true,
   "explorer.confirmDragAndDrop": false,
   "explorer.openEditors.visible": 0,
   "prettier.proseWrap": "always",
+  "prettier.printWidth": 100,
   "files.associations": {
     "fish_variables": "fish",
     ".env": "ini",
     ".env.uat": "ini",
     ".env.dev": "ini",
-    ".env.template": "ini"
+    ".env.template": "ini",
+    "*.build": "groovy"
+  },
+  "files.exclude": {
+    "**/__pycache__": true
   },
   "workbench.iconTheme": "material-icon-theme",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -25,6 +29,7 @@
   "editor.renderControlCharacters": true,
   "editor.minimap.enabled": false,
   "editor.suggest.showWords": false,
+  "editor.bracketPairColorization.enabled": false,
   "auto-close-tag.disableOnLanguage": ["typescript"],
   "todohighlight.keywords": [
     "TODO:",
@@ -204,10 +209,7 @@
     {
       "key": "c",
       "name": "Save and close buffer",
-      "commands": [
-        "workbench.action.files.save",
-        "workbench.action.closeActiveEditor"
-      ]
+      "commands": ["workbench.action.files.save", "workbench.action.closeActiveEditor"]
     },
     {
       "key": "s",
@@ -256,10 +258,7 @@
     {
       "key": "P",
       "name": "Format document",
-      "commands": [
-        "editor.action.formatDocument",
-        "prettier.forceFormatDocument"
-      ]
+      "commands": ["editor.action.formatDocument", "prettier.forceFormatDocument"]
     },
     // File operations
     {
@@ -291,10 +290,7 @@
         {
           "key": "r",
           "name": "Rename file",
-          "commands": [
-            "workbench.files.action.showActiveFileInExplorer",
-            "renameFile"
-          ]
+          "commands": ["workbench.files.action.showActiveFileInExplorer", "renameFile"]
         },
         {
           "key": "S",
@@ -380,9 +376,6 @@
       "commands": ["whichkey.searchBindings"]
     }
   ],
-  "prettier.printWidth": 100,
-  "files.exclude": {
-    "**/__pycache__": true
-  },
+  "editor.formatOnSave": true,
   "window.zoomLevel": 1
 }

@@ -5,8 +5,6 @@ export PATH="$HOME/.bin:$PATH"
 
 # Shell
 alias c="clear"
-alias e="echo"
-alias ee="exit"
 alias r="reload" # defined in shell specific aliases
 alias rl="reload" # defined in shell specific aliases
 
@@ -19,7 +17,7 @@ alias ....="cd ../../.."
 alias ls="exa --group-directories-first --classify --no-user -al"
 alias lsc="exa --group-directories-first --classify --no-user --no-time --no-permissions --no-filesize -l"
 alias lsa="ls"
-alias lst="lsa --tree --ignore-glob 'node_modules|venv|dist|build|.git'"
+alias lst="lsa --tree --ignore-glob 'node_modules|venv|dist|build|.git|.private'"
 alias ls2="lst --level=2"
 alias ls3="lst --level=3"
 alias ls4="lst --level=4"
@@ -36,32 +34,28 @@ alias dkpt="dockerls-ports"
 alias dksz="dockerls-sizes"
 
 # Git
-alias lg="lazygit"
+alias lg="node --version > /dev/null && lazygit"
 alias g="git"
 alias gs="git status"
-alias gundo="git reset --soft HEAD^"
+alias gu="git reset --soft HEAD^"
+alias gp="git remote prune origin"
 # -- See .gitconfig for aliases
 alias gl="git l"
 alias gg="git g"
 alias ga="git ga"
 
-# Homebrew
-alias b="brew"
-
 # Python
 alias p="pyenv" # defined in shell specific aliases
+alias d="deactivate"
 alias pinit="python3 -m venv venv"
 alias pinstall="pip3 install -r requirements.txt"
-alias de="deactivate"
 
 # z
 alias zl="z -lr" # Find using z based on text match rank
 alias zt="z -lt" # Find using z based on most recently visited
 
-# Neovim / LunarVim
+# LunarVim
 export PATH="$HOME/.local/bin:$PATH"
-alias v="node --version > /dev/null && lvim"
-alias n="node --version > /dev/null && lvim"
 
 # Misc
 alias f="find . -name"
@@ -69,3 +63,8 @@ alias filetype="mdls -name kMDItemContentType -name kMDItemContentTypeTree -name
 alias size="stat -f \"%z bytes\""
 alias diskspace="df -P -kHl"
 alias ds="diskspace"
+alias sudo-exit="sudo --reset-timestamp"
+
+# Cloud platforms
+alias clear-aws="export AWS_PROFILE="
+alias clear-gcloud="gcloud auth revoke --all"

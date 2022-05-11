@@ -3,8 +3,9 @@
 setup_symlinks() {
   # Directories that need to exist for symlinks to not die
   local -ar directories=(
-    "Library/Application Support/Code/User"
+    ".bin"
     ".config"
+    "Library/Application Support/Code/User"
   )
 
   # Files or directories to symlink
@@ -12,9 +13,11 @@ setup_symlinks() {
     ".bin"
     ".config/antibody"
     ".config/fish"
+    ".config/iterm2"
     ".config/kitty"
     ".config/raycast"
     ".config/aliases"
+    ".config/starship.toml"
     "Library/Application Support/Code/User/settings.json"
     "Library/Application Support/Code/User/keybindings.json"
     ".gitconfig"

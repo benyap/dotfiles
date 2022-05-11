@@ -2,3 +2,6 @@ node_modules
 .DS_Store
 *.local
 *.backup
+
+home/.config/iterm2/AppSupport
+home/.config/raycast/extensions

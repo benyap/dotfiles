@@ -30,7 +30,6 @@ _install_fish_plugins() {
   _install_fish_plugin "autopair" "jorgebucaran/autopair.fish"
   _install_fish_plugin "bass" "edc/bass"
   _install_fish_plugin "fish-nvm" "FabioAntunes/fish-nvm"
-  _install_fish_plugin "tide" "IlanCosman/tide@v5"
   _install_fish_plugin "google-cloud-sdk-fish-completion" "lgathy/google-cloud-sdk-fish-completion"
   _install_fish_plugin "colored_man_pages" "patrickf1/colored_man_pages.fish"
 }

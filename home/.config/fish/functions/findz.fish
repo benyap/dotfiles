@@ -1,3 +1,4 @@
+# [CUSTOM FUNCTION]
 # Use z to find files and list out their full paths
 
 function findz

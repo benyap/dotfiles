@@ -1,3 +1,4 @@
+# [CUSTOM FUNCTION]
 # Emulates the export keyword like in bash / zsh
 # https://stackoverflow.com/a/29387647
 
