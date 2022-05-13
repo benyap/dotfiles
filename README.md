@@ -40,12 +40,24 @@ bash (curl -Ls https://raw.github.com/benyap/dotfiles/main/scripts/bootstrap.sh 
 
 A couple of other useful things that I also do but couldn't figure out how to automate with scripts:
 
-- Import [Raycast](https://raycast.com) configuration from `$HOME/.config/raycast/config.rayconfig`
-- Import [iTerm2](https://iterm2.com) profiles and keymaps from `assets/iterm`
-  - [Profiles.json](assets/iterm/Profiles.json) contains the OneDark color scheme and some nice
-    editor-style keymappings
-  - [Panels.itermkeymap](assets/iterm/Panels.itermkeymap) contains additional keymappings that give
-    nice shortcuts for managing and navigating panes
+#### [Raycast](https://raycast.com)
+
+- Import non-sensitive configuration from
+  [assets/raycast/public.rayconfig](assets/raycast/public.rayconfig). This should include all
+  preferences, quicklinks and script directories.
+- Import extensions configuration from
+  [assets/raycast/extensions.rayconfig](assets/raycast/extensions.rayconfig). This file is password
+  protected.
+- As a reference for those checking out my repository and won't have the password to the extensions
+  configuration, a list of extensions I use is exported to
+  [assets/raycast/extensions.json](assets/raycast/extensions.json).
+
+#### [iTerm](https://iterm2.com)
+
+- Import [Profiles.json](assets/iterm/Profiles.json), which contains the OneDark color scheme and
+  some nice editor-style keymappings
+- Import [Panels.itermkeymap](assets/iterm/Panels.itermkeymap) contains additional keymappings that
+  give nice shortcuts for managing and navigating panes
 
 ### Post install
 

@@ -1,0 +1,98 @@
+[
+  {
+    "name": "terminalfinder",
+    "title": "Terminal Finder",
+    "description": "Open currently selected Finder (or Path Finder) window in Terminal (or iTerm2) and vice versa",
+    "author": "yedongze"
+  },
+  {
+    "name": "url-tools",
+    "title": "URL Tools",
+    "description": "Quickly encode or decode URL from the clipboard",
+    "author": "joshua46"
+  },
+  {
+    "name": "vscode-project-manager",
+    "title": "Visual Studio Code - Project Manager",
+    "description": "Search and open projects from Visual Studio Code Project Manager",
+    "author": "MarkusLanger"
+  },
+  {
+    "name": "toothpick",
+    "title": "Toothpick",
+    "description": "Manage bluetooth connections in Raycast",
+    "author": "briankosw"
+  },
+  {
+    "name": "json-format",
+    "title": "Format JSON",
+    "description": "Formats a JSON file with a selected indentation.",
+    "author": "destiner"
+  },
+  {
+    "name": "spotify-player",
+    "title": "Spotify Player",
+    "description": "Search and Play Spotify music from the Raycast",
+    "author": "mattisssa"
+  },
+  {
+    "name": "polished",
+    "title": "Polished",
+    "description": "Convert & Modify Colors with HEX, RGB, and HSL values. You can lighten & darken colors, invert them, do contrast calculations and much more.",
+    "author": "lekoarts"
+  },
+  {
+    "name": "random",
+    "title": "Random Data Generator",
+    "description": "Generate random data using Faker library",
+    "author": "loris"
+  },
+  {
+    "name": "encoding-tools",
+    "title": "Encoding Tools",
+    "description": "A toolbox for encoding, decoding, and hashing data in the clipboard.",
+    "author": "eth-p"
+  },
+  {
+    "name": "uuid-generator",
+    "title": "UUID Generator",
+    "description": "A quick way to generate UUIDs without opening the browser",
+    "author": "jmaeso"
+  },
+  {
+    "name": "port-manager",
+    "title": "Port Manager",
+    "description": "Find, open and kill ports",
+    "author": "lucaschultz"
+  },
+  {
+    "name": "jwt-decoder",
+    "title": "JWT Decoder",
+    "description": "Decode Your JSON Web Tokens – extract the header and data information from a JWT",
+    "author": "gdsmith"
+  },
+  {
+    "name": "kill-process",
+    "title": "Kill Process",
+    "description": "Lists all running processes, ordered by CPU usage and allows killing one",
+    "author": "rolandleth"
+  },
+  {
+    "name": "node-js-evaluate",
+    "title": "Node.js Evaluate",
+    "description": "Evaluate Javascript (Node.js) code on-the-fly",
+    "author": "Selfish"
+  },
+  {
+    "name": "spotify-controls",
+    "title": "Spotify Controls",
+    "description": "Control the Spotify app for macOS with your keyboard.",
+    "author": "thomas"
+  },
+  {
+    "name": "search-npm",
+    "title": "Search npm Packages",
+    "description": "Search for npm package information from npms.io",
+    "author": "mrmartineau"
+  }
+]

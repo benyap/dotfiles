@@ -5,7 +5,11 @@
   "author": "Ben Yap <contact@benyap.com>",
   "license": "MIT",
   "scripts": {
-    "release": "release-it"
+    "start": "./scripts/install.sh",
+    "post": "./scripts/post.sh",
+    "release": "release-it",
+    "export": "yarn export-raycast-extensions",
+    "export-raycast-extensions": "node utils/export-raycast-extensions.js"
   },
   "devDependencies": {
     "@release-it/conventional-changelog": "4.2.2",

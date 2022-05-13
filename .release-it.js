@@ -1,4 +1,7 @@
 module.exports = {
+  hooks: {
+    "before:init": ["yarn export"],
+  },
   github: {
     release: true,
     releaseName: "Release ${version}",
