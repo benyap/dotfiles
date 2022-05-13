@@ -53,7 +53,7 @@ style = "#fc9a4a"
 symbol = ""
 
 [gcloud]
-format = '([$symbol $account(@$domain) (\($project\) )]($style))'
+format = '([$symbol ($account(@$domain) )(\($project\) )]($style))'
 style = "#4285F4"
 symbol = ""
 
