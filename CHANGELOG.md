@@ -1,4 +1,18 @@
-## [0.5.0](https://github.com/benyap/dotfiles/compare/v0.4.0...v0.5.0) (2021-12-08)
+
+
+## [0.6.0](https://github.com/benyap/dotfiles/compare/v0.5.0...v0.6.0) (2022-05-21)
+
+
+### Features
+
+* add PDF Preview VSCode extension ([c5193ba](https://github.com/benyap/dotfiles/commit/c5193ba5d6fff5248390292edf8ba290203161bc))
+* add Project Manager VSCode extension ([0173063](https://github.com/benyap/dotfiles/commit/0173063a4673a2722a15c2151d1a5330e71ba4d8))
+* add Raycast extensions, deprecate old scripts in favour of extensions ([b6c353a](https://github.com/benyap/dotfiles/commit/b6c353ab91b290c77cd0b1365e7ce06f519e85ce))
+* add saw for better AWS CloudWatch logs ([ebb3956](https://github.com/benyap/dotfiles/commit/ebb395610cf2fc4dc1ee75e32f41c3ee90fee868))
+* add shottr for a better screenshot experience ([b6e7f55](https://github.com/benyap/dotfiles/commit/b6e7f558c5660387f9174e6d37728104e19a5150))
+* migrate to starship prompt with iTerm2 ([e442ba4](https://github.com/benyap/dotfiles/commit/e442ba42b276d3414a72452bc29ba2e65ffeea95))
+* update raycast to use extensions, remove old scripts ([c089bee](https://github.com/benyap/dotfiles/commit/c089bee47ba5f086bb1227f3a6c2bd6b1e73de22))
+* use Python 3.8, update Raycast config, minor updates ([9bbbf68](https://github.com/benyap/dotfiles/commit/9bbbf684c34094e4f9a6ae8b28a6337ae12fec7b))## [0.5.0](https://github.com/benyap/dotfiles/compare/v0.4.0...v0.5.0) (2021-12-08)
 
 
 ### Features
@@ -53,4 +67,3 @@
 
 * add boostrap script to download the repository ([c993d11](https://github.com/benyap/dotfiles/commit/c993d1172f24111a7fd0aeae46a017ad0d24dae3))
 * add my configuration ([c6b0602](https://github.com/benyap/dotfiles/commit/c6b06025fa3b5f9b0ed24a208e787b274dee3a95))
-
