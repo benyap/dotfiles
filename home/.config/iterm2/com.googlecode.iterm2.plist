@@ -1217,6 +1217,8 @@ Resize Split Pane.Move Divider Right</string>
 			<false/>
 			<key>Shortcut</key>
 			<string></string>
+			<key>Show Timestamps</key>
+			<integer>2</integer>
 			<key>Silence Bell</key>
 			<false/>
 			<key>Smart Cursor Color</key>
@@ -1228,7 +1230,7 @@ Resize Split Pane.Move Divider Right</string>
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.050000000000000003</real>
+			<real>0.019999999999999997</real>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
@@ -1294,6 +1296,8 @@ Resize Split Pane.Move Divider Right</string>
 	<false/>
 	<key>SeparateStatusBarsPerPane</key>
 	<false/>
+	<key>ShortLivedSessionDuration</key>
+	<real>1</real>
 	<key>ShowMetalFPSmeter</key>
 	<false/>
 	<key>ShowNewOutputIndicator</key>
@@ -1331,7 +1335,7 @@ Resize Split Pane.Move Divider Right</string>
 	<key>VisualIndicatorForEsc</key>
 	<false/>
 	<key>WindowNumber</key>
-	<true/>
+	<false/>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
