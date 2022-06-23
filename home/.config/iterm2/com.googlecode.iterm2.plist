@@ -767,13 +767,13 @@ Resize Split Pane.Move Divider Right</string>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.28235295414924622</real>
+				<real>0.48882675170898438</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.25098040699958801</real>
+				<real>0.43949963469797704</real>
 				<key>Red Component</key>
-				<real>0.23529411852359772</real>
+				<real>0.41483605276334856</real>
 			</dict>
 			<key>Ansi 9 Color</key>
 			<dict>
@@ -1298,6 +1298,8 @@ Resize Split Pane.Move Divider Right</string>
 	<false/>
 	<key>ShortLivedSessionDuration</key>
 	<real>1</real>
+	<key>ShowFullScreenTabBar</key>
+	<false/>
 	<key>ShowMetalFPSmeter</key>
 	<false/>
 	<key>ShowNewOutputIndicator</key>
@@ -1336,6 +1338,8 @@ Resize Split Pane.Move Divider Right</string>
 	<false/>
 	<key>WindowNumber</key>
 	<false/>
+	<key>findMode_iTerm</key>
+	<integer>0</integer>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>

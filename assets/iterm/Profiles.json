@@ -279,11 +279,11 @@
         "Green Component": 0.84313726425170898
       },
       "Ansi 8 Color": {
-        "Red Component": 0.23529411852359772,
+        "Red Component": 0.41483605276334856,
         "Color Space": "sRGB",
-        "Blue Component": 0.28235295414924622,
+        "Blue Component": 0.48882675170898438,
         "Alpha Component": 1,
-        "Green Component": 0.25098040699958801
+        "Green Component": 0.43949963469797704
       },
       "Badge Color": {
         "Red Component": 1,
@@ -335,7 +335,7 @@
         "Alpha Component": 1,
         "Green Component": 0.7137255072593689
       },
-      "Transparency": 0.050000000000000003,
+      "Transparency": 0.019999999999999997,
       "Background Color": {
         "Red Component": 0.15686275064945221,
         "Color Space": "sRGB",
@@ -354,6 +354,7 @@
         "Green Component": 0.54901963472366333
       },
       "Columns": 120,
+      "Show Timestamps": 2,
       "Use Tab Color": false,
       "Visual Bell": true,
       "ASCII Ligatures": false,
