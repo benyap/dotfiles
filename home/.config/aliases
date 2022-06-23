@@ -67,4 +67,4 @@ alias sudo-exit="sudo --reset-timestamp"
 
 # Cloud platforms
 alias clear-aws="export AWS_PROFILE="
-alias clear-gcloud="gcloud auth revoke --all"
+alias clear-gcloud="gcloud config unset project && gcloud auth revoke --all"

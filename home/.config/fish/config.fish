@@ -57,6 +57,9 @@ function vv
   end
 end
 
+# Load tabtab (for auto completion)
+[ -f ~/.config/tabtab/fish/__tabtab.fish ]; and . ~/.config/tabtab/fish/__tabtab.fish; or true
+
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # Load Python 3.8

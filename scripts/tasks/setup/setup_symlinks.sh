@@ -17,6 +17,7 @@ setup_symlinks() {
     ".config/kitty"
     ".config/raycast"
     ".config/aliases"
+    ".config/tabtab"
     ".config/starship.toml"
     "Library/Application Support/Code/User/settings.json"
     "Library/Application Support/Code/User/keybindings.json"
