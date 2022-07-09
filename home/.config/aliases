@@ -33,6 +33,9 @@ alias dkid="dockerls-ids"
 alias dkpt="dockerls-ports"
 alias dksz="dockerls-sizes"
 
+# Node
+alias n="node --version > /dev/null && echo Initialised Node \$(node --version)"
+
 # Git
 alias lg="node --version > /dev/null && lazygit"
 alias g="git"
