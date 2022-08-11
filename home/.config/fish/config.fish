@@ -65,6 +65,11 @@ end
 # Load Python 3.8
 set PATH /usr/local/opt/python@3.8/bin $PATH
 
+# pnpm
+set -gx PNPM_HOME "/Users/benyap/Library/pnpm"
+set -gx PATH "$PNPM_HOME" $PATH
+# pnpm end
+
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # Define fish specific aliases
