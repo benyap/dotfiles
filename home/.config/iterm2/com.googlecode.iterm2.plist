@@ -8,6 +8,8 @@
 	<false/>
 	<key>AllowTabbarInTitlebarAccessoryBigSur</key>
 	<false/>
+	<key>AlternateMouseScroll</key>
+	<true/>
 	<key>CopyLastNewline</key>
 	<false/>
 	<key>CopySelection</key>
@@ -1299,7 +1301,7 @@ Resize Split Pane.Move Divider Right</string>
 	<key>ShortLivedSessionDuration</key>
 	<real>1</real>
 	<key>ShowFullScreenTabBar</key>
-	<false/>
+	<true/>
 	<key>ShowMetalFPSmeter</key>
 	<false/>
 	<key>ShowNewOutputIndicator</key>
