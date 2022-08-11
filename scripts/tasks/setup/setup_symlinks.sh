@@ -18,6 +18,7 @@ setup_symlinks() {
     ".config/raycast"
     ".config/aliases"
     ".config/tabtab"
+    ".config/lvim"
     ".config/starship.toml"
     "Library/Application Support/Code/User/settings.json"
     "Library/Application Support/Code/User/keybindings.json"
