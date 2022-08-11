@@ -4,18 +4,20 @@
   "security.workspace.trust.untrustedFiles": "open",
   "terminal.integrated.defaultProfile.osx": "fish",
   "editor.fontFamily": "'Hack Nerd Font', Menlo, monospace",
-  "editor.codeLens": false,
   "explorer.confirmDragAndDrop": false,
   "explorer.openEditors.visible": 0,
+  "gitlens.codeLens.authors.enabled": false,
+  "gitlens.codeLens.enabled": false,
   "prettier.proseWrap": "always",
   "prettier.printWidth": 100,
   "files.associations": {
     "fish_variables": "fish",
     ".env": "ini",
-    ".env.uat": "ini",
-    ".env.dev": "ini",
+    ".env.local": "ini",
+    ".env.development": "ini",
+    ".env.production": "ini",
     ".env.template": "ini",
-    "*.build": "groovy"
+    "*.build": "groovy",
   },
   "files.exclude": {
     "**/__pycache__": true
