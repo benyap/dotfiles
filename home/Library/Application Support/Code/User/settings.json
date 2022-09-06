@@ -6,6 +6,7 @@
   "editor.fontFamily": "'Hack Nerd Font', Menlo, monospace",
   "explorer.confirmDragAndDrop": false,
   "explorer.openEditors.visible": 0,
+  "git.mergeEditor": false,
   "gitlens.codeLens.authors.enabled": false,
   "gitlens.codeLens.enabled": false,
   "prettier.proseWrap": "always",
@@ -17,7 +18,7 @@
     ".env.development": "ini",
     ".env.production": "ini",
     ".env.template": "ini",
-    "*.build": "groovy",
+    "*.build": "groovy"
   },
   "files.exclude": {
     "**/__pycache__": true
@@ -32,16 +33,19 @@
   "markdown-preview-enhanced.breakOnSingleNewLine": false,
   "markdown.suggest.paths.enabled": false,
   "markdown.extension.italic.indicator": "_",
+  "projectManager.tags": [],
+  "projectManager.sortList": "Path",
   "workbench.iconTheme": "material-icon-theme",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "terminal.external.osxExec": "kitty.app",
   "terminal.integrated.bellDuration": 10000,
   "editor.tabSize": 2,
-  "terminal.integrated.fontFamily": "'MesloLGS Nerd Font', Menlo, 'Courier New', monospace",
+  "terminal.integrated.fontFamily": "'Hack Nerd Font', Menlo, 'Courier New', monospace",
   "editor.renderControlCharacters": true,
   "editor.minimap.enabled": false,
   "editor.suggest.showWords": false,
   "editor.bracketPairColorization.enabled": false,
+  "tailwindCSS.classAttributes": ["class", "className", "ngClass", ".*ClassName"],
   "auto-close-tag.disableOnLanguage": ["typescript"],
   "projectManager.git.baseFolders": ["~/Code", "~/.dotfiles"],
   "todohighlight.keywords": [
@@ -243,6 +247,11 @@
       "key": "e",
       "name": "File explorer",
       "commands": ["workbench.explorer.fileView.focus"]
+    },
+    {
+      "key": "l",
+      "name": "List projects",
+      "commands": ["projectManager.listProjects"]
     },
     {
       "key": "t",
