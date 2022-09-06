@@ -60,6 +60,9 @@ alias zt="z -lt" # Find using z based on most recently visited
 # LunarVim
 export PATH="$HOME/.local/bin:$PATH"
 
+# Terraform
+alias tf="terraform"
+
 # Misc
 alias f="find . -name"
 alias filetype="mdls -name kMDItemContentType -name kMDItemContentTypeTree -name kMDItemKind"
