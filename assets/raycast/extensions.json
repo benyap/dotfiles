@@ -32,7 +32,7 @@
   {
     "name": "spotify-player",
     "title": "Spotify Player",
-    "description": "Search and Play Spotify music from the Raycast",
+    "description": "Search and Play Spotify music from the Raycast, control your library with convenient commands like Like",
     "author": "mattisssa"
   },
   {
@@ -62,8 +62,20 @@
   {
     "name": "port-manager",
     "title": "Port Manager",
-    "description": "Find, open and kill ports",
+    "description": "Find open ports and close them",
     "author": "lucaschultz"
+  },
+  {
+    "name": "apple-notes",
+    "title": "Apple Notes",
+    "description": "Search and create notes within the Apple Notes application.",
+    "author": "tumtum"
+  },
+  {
+    "name": "raindrop-io",
+    "title": "Raindrop.io",
+    "description": "Search your Raindrop.io bookmarks",
+    "author": "lardissone"
   },
   {
     "name": "jwt-decoder",
@@ -92,7 +104,7 @@
   {
     "name": "search-npm",
     "title": "Search npm Packages",
-    "description": "Search for npm package information from npms.io",
+    "description": "Search for npm package information",
     "author": "mrmartineau"
   }
 ]
