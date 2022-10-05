@@ -12,7 +12,7 @@
     "export-raycast-extensions": "node utils/export-raycast-extensions.js"
   },
   "devDependencies": {
-    "@release-it/conventional-changelog": "4.2.2",
-    "release-it": "14.13.1"
+    "@release-it/conventional-changelog": "5.1.0",
+    "release-it": "15.5.0"
   }
 }
