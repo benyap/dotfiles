@@ -50,7 +50,7 @@ alias ga="git ga"
 # Python
 alias p="pyenv" # defined in shell specific aliases
 alias d="deactivate"
-alias pinit="python3 -m venv venv"
+alias pinit="python3.8 -m venv venv"
 alias pinstall="pip3 install -r requirements.txt"
 
 # z

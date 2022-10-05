@@ -13,4 +13,4 @@
 # Documentation:
 # @raycast.description Open VS Code workspace
 
-code ~/Code/workspaces/"$1".code-workspace
+code ~/Code/.workspaces/"$1".code-workspace

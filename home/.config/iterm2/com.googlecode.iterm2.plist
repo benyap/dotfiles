@@ -821,7 +821,7 @@ Resize Split Pane.Move Divider Right</string>
 				<real>1</real>
 			</dict>
 			<key>Blink Allowed</key>
-			<false/>
+			<true/>
 			<key>Blinking Cursor</key>
 			<true/>
 			<key>Blur</key>
@@ -869,15 +869,15 @@ Resize Split Pane.Move Divider Right</string>
 			<key>Cursor Guide Color</key>
 			<dict>
 				<key>Alpha Component</key>
-				<real>0.047166824340820312</real>
+				<real>0.039215686274509803</real>
 				<key>Blue Component</key>
 				<real>1</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.9268307089805603</real>
+				<real>0.85882353782653809</real>
 				<key>Red Component</key>
-				<real>0.70213186740875244</real>
+				<real>0.65490198135375977</real>
 			</dict>
 			<key>Cursor Text Color</key>
 			<dict>
@@ -1207,13 +1207,13 @@ Resize Split Pane.Move Divider Right</string>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>1</real>
+				<real>0.90177202224731445</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.86164349317550659</real>
+				<real>0.77970538275145451</real>
 				<key>Red Component</key>
-				<real>0.65801715850830078</real>
+				<real>0.6210187514068366</real>
 			</dict>
 			<key>Send Code When Idle</key>
 			<false/>
@@ -1224,7 +1224,7 @@ Resize Split Pane.Move Divider Right</string>
 			<key>Silence Bell</key>
 			<false/>
 			<key>Smart Cursor Color</key>
-			<false/>
+			<true/>
 			<key>Sync Title</key>
 			<false/>
 			<key>Tags</key>
@@ -1248,6 +1248,8 @@ Resize Split Pane.Move Divider Right</string>
 			<key>Use Non-ASCII Font</key>
 			<false/>
 			<key>Use Tab Color</key>
+			<false/>
+			<key>Use Underline Color</key>
 			<false/>
 			<key>Vertical Spacing</key>
 			<real>1</real>
@@ -1345,6 +1347,8 @@ Resize Split Pane.Move Divider Right</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
+	<false/>
+	<key>kCPKUseSystemColorPicker</key>
 	<false/>
 </dict>
 </plist>

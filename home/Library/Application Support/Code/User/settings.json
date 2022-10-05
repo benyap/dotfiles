@@ -18,7 +18,9 @@
     ".env.development": "ini",
     ".env.production": "ini",
     ".env.template": "ini",
-    "*.build": "groovy"
+    "*.build": "groovy",
+    "*.tldr": "json",
+    ".gcloudignore": "ignore"
   },
   "files.exclude": {
     "**/__pycache__": true

@@ -65,6 +65,7 @@ _install_vscode_plugins() {
   _install_vscode_plugin "Which Key" "vspacecode.whichkey"
   _install_vscode_plugin "TODO Highlight" "wayou.vscode-todo-highlight"
   _install_vscode_plugin "VimL" "xadillax.viml"
+  _install_vscode_plugin "MDX Preview" "xyc.vscode-mdx-preview"
   _install_vscode_plugin "Markdown All in One" "yzhang.markdown-all-in-one"
   _install_vscode_plugin "One Dark Pro" "zhuangtongfa.material-theme"
 }
