@@ -6,7 +6,7 @@
 # REPLACED with the content at this origin. This is really only useful for
 # when setting up the repo on a new env. No git actions are taken if the
 # current directory is already a git repo.
-declare -r REPOSITORY_ORIGIN="git@github.com:benyap/dotfiles.git"
+declare -r REPOSITORY_ORIGIN="https://github.com/benyap/dotfiles.git"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
