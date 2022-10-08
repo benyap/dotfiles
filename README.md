@@ -5,8 +5,7 @@ developer. I made this mainly for my own safe-keeping and for when I need to set
 environments, but feel free to take this and make it your own.
 
 This set up is currently tested for **macOS 12 Monterey** on Intel, and also on Apple Silicon with
-some [minor modifications](#compatibility-with-apple-silicon). Compatibility for other versions of
-macOS is not guaranteed.
+some minor additional steps. Compatibility for other versions of macOS is not guaranteed.
 
 ## Installation
 
@@ -19,6 +18,23 @@ install. Use at your own risk!
 - `bash`, `zsh` or `fish`: a shell to run commands in
 - `curl`: to download stuff
 - internet
+
+### Setup on Apple Silicon
+
+If you are on an Apple Silicon machine, there are a few additional steps to set up before installation.
+If you're on an Intel machine, you can skip these steps.
+
+In `bash` or `zsh`:
+
+```sh
+echo "export PATH=/opt/homebrew/bin:\$PATH" > ~/.zshrc
+```
+
+If you're using `fish`:
+
+```sh
+fish_add_path /opt/homebrew/bin
+```
 
 ### Download and install
 
@@ -77,7 +93,7 @@ Navigate to the root of the project and run the `post.sh` script:
 ./scripts/post.sh
 ```
 
-#### Compatibility with Apple Silicon
+### Compatibility with Apple Silicon
 
 **Known issues**
 
