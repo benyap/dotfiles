@@ -14,7 +14,6 @@ setup_symlinks() {
     ".config/antibody"
     ".config/fish"
     ".config/iterm2"
-    ".config/kitty"
     ".config/raycast"
     ".config/aliases"
     ".config/tabtab"

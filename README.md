@@ -4,8 +4,9 @@ This repository contains the configuration and tools that I use on a day to day 
 developer. I made this mainly for my own safe-keeping and for when I need to set up new
 environments, but feel free to take this and make it your own.
 
-This set up is currently tested for **macOS 11 Big Sur**. Compatability for other versions of macOS
-(or other UNIX distributions) is not guaranteed.
+This set up is currently tested for **macOS 12 Monterey** on Intel, and also on Apple Silicon with
+some [minor modifications](#compatibility-with-apple-silicon). Compatibility for other versions of
+macOS is not guaranteed.
 
 ## Installation
 
@@ -40,6 +41,12 @@ bash (curl -Ls https://raw.github.com/benyap/dotfiles/main/scripts/bootstrap.sh 
 
 A couple of other useful things that I also do but couldn't figure out how to automate with scripts:
 
+#### fish_variables
+
+Some of the values in `home/.config/fish/fish_variables` have the absolute path to the home
+directory hardcoded. When installing on a new machine that has a different home directory, this file
+will need to be updated.
+
 #### [Raycast](https://raycast.com)
 
 - Import non-sensitive configuration from
@@ -56,8 +63,8 @@ A couple of other useful things that I also do but couldn't figure out how to au
 
 - Import [Profiles.json](assets/iterm/Profiles.json), which contains the OneDark color scheme and
   some nice editor-style keymappings
-- Import [Panels.itermkeymap](assets/iterm/Panels.itermkeymap) contains additional keymappings that
-  give nice shortcuts for managing and navigating panes
+- Import [Panels.itermkeymap](assets/iterm/Panels.itermkeymap), which contains additional
+  keymappings that give nice shortcuts for managing and navigating panes
 
 ### Post install
 
@@ -70,11 +77,29 @@ Navigate to the root of the project and run the `post.sh` script:
 ./scripts/post.sh
 ```
 
+#### Compatibility with Apple Silicon
+
+**Known issues**
+
+1. Installation path for Homebrew has changed from `/usr/local/bin` to `/opt/homebrew/bin`
+
+**Changes to make when on Apple Silicon**
+
+Install scripts have been modified to address issue 1 when these scripts are installed on machines
+with an Apple Silicon chip.
+
+The following manual steps are required:
+
+- Raycast scripts written in JavaScript (found in the `home/.config/raycast` directory) must have
+  their shebang lines changed from `#!/usr/local/opt/node@16/bin/node` to
+  `#!/opt/homebrew/opt/node@16/bin/node`
+
 ### Updating
 
 To update from the remote, simple do a `git pull` and run `./scripts/install.sh`.
 
-If you've made local changes, simply run `./scripts/install.sh`.
+If you've made local changes that require updating or installing packages, simply run
+`./scripts/install.sh`.
 
 ## Environment customisation
 
@@ -126,9 +151,9 @@ you will need to do before you try to install it on your machine:
 - `home/.config/fish/fish_variables` - some of the variables have my home directory baked in, so you
   will need to rename these
 
-And in case it wasn't obvious, the `home` directory in this project more or less tries to mirror
-what would be symlinked to your actual home directory. It's pretty easy to add more things you want
-to symlink - have a look at `scripts/tasks/setup/setup_symlinks.sh`.
+The `home` directory in this project more or less tries to mirror what would be symlinked to your
+actual home directory. It's pretty easy to add more things you want to symlink - have a look at
+`scripts/tasks/setup/setup_symlinks.sh`.
 
 ## Check these out
 

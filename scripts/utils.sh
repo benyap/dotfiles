@@ -237,3 +237,15 @@ run_all_setup_functions_in_directory() {
     done    
   done
 }
+
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+is_arm() {
+  if [[ $(uname -p) == "arm" ]]; then
+    return 0
+  else
+    return 1
+  fi
+}

@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# Opt out of Homebrew analytics
+# https://github.com/Homebrew/brew/blob/0c95c60511cc4d85d28f66b58d51d85f8186d941/share/doc/homebrew/Analytics.md#opting-out
+export HOMEBREW_NO_ANALYTICS=1
+
+# Opt out of Homebrew auto update when running commands like install
+# https://docs.brew.sh/Manpage#environment
+export HOMEBREW_NO_AUTO_UPDATE=1
+
 # Export path to custom scripts
 export PATH="$HOME/.bin:$PATH"
 
@@ -33,11 +41,8 @@ alias dkid="dockerls-ids"
 alias dkpt="dockerls-ports"
 alias dksz="dockerls-sizes"
 
-# Node
-alias n="node --version > /dev/null && echo Initialised Node \$(node --version)"
-
 # Git
-alias lg="node --version > /dev/null && lazygit"
+alias lg="lazygit"
 alias g="git"
 alias gs="git status"
 alias gu="git reset --soft HEAD^"

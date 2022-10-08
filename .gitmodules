@@ -1,3 +1,0 @@
-[submodule "home/.config/kitty/kittens/kitty_search"]
-	path = home/.config/kitty/kittens/kitty_search
-	url = https://github.com/trygveaa/kitty-kitten-search

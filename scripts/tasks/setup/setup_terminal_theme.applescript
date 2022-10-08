@@ -19,7 +19,7 @@ tell application "Terminal"
 	if (name of default settings is not equal to themeName) then
 		# Open the theme to add it to terminal (will cause new window to open)
 		# and set the new theme as default
-		do shell script "open '../assets/" & themeName & ".terminal'"
+		do shell script "open '../assets/terminal/" & themeName & ".terminal'"
 		delay 1
 		set default settings to settings set themeName
 	end if

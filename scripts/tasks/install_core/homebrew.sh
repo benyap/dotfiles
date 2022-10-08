@@ -28,8 +28,8 @@ install_homebrew() {
   brew_tap "homebrew/cask-versions" "homebrew/cask-versions"
 
   brew_update
-  brew_upgrade
-  brew_cleanup
+  # brew_upgrade
+  # brew_cleanup
 }
 
 
@@ -85,6 +85,14 @@ brew_install_app() {
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+
+_brew_path() {
+  if is_arm; then
+    echo "/opt/homebrew/bin"
+  else
+    echo "/usr/local/bin"
+  fi
+}
 
 _is_installed_via_brew() {
   brew list "$1" &> /dev/null && return 0 || return 1

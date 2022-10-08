@@ -20,7 +20,9 @@ init() {
   local -r startDir=$(pwd)
 
   # Load utils and functions
+  # shellcheck source=/dev/null
   source utils.sh && cd "$startDir" || exit 1
+  # shellcheck source=/dev/null
   source tasks/main.sh && cd "$startDir" || exit 1
 
   print_line
@@ -57,9 +59,9 @@ main() {
   print_info "Finished setting up tracking via git"
   print_line
 
-  print_info "Installing utilities..."
-  run_all_install_functions_in_directory "tasks/install_utilities"
-  print_info "Finished installing utilities"
+  print_info "Installing CLI tools..."
+  run_all_install_functions_in_directory "tasks/install_cli"
+  print_info "Finished installing CLI tools"
   print_line
 
   print_info "Installing applications..."
