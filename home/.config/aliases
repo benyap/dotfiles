@@ -44,13 +44,6 @@ alias dksz="dockerls-sizes"
 # Git
 alias lg="lazygit"
 alias g="git"
-alias gs="git status"
-alias gu="git reset --soft HEAD^"
-alias gp="git remote prune origin"
-# -- See .gitconfig for aliases
-alias gl="git l"
-alias gg="git g"
-alias ga="git ga"
 
 # Python
 alias p="pyenv" # defined in shell specific aliases

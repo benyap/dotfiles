@@ -21,6 +21,7 @@ setup_symlinks() {
     ".config/starship.toml"
     "Library/Application Support/Code/User/settings.json"
     "Library/Application Support/Code/User/keybindings.json"
+    "Library/Application Support/lazygit/config.yml"
     ".gitconfig"
     ".gitconfig.local"
     ".gitignore"

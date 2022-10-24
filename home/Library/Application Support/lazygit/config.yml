@@ -1,0 +1,45 @@
+customCommands:
+  - key: "n"
+    context: localBranches
+    command: git checkout -B {{index .PromptResponses 0}}{{index .PromptResponses 1}}
+    description: create new branch
+    loadingText: creating branch
+    prompts:
+      - type: menu
+        title: New branch - What kind of branch?
+        options:
+          - name: feature/*
+            value: feature/
+          - name: fix/*
+            value: fix/
+          - name: release/*
+            value: release/
+          - name: (custom)
+            value: ""
+      - type: input
+        title: Branch name?
+        initialValue: ""
+
+  - key: "<c-p>"
+    context: remoteBranches
+    command: git remote prune origin
+    description: prune remote branches
+    loadingText: pruning remote branches
+
+  - key: "<c-r>"
+    command: git reset --soft HEAD^
+    context: files
+    prompts:
+      - type: confirm
+        title: Confirm reset
+        body: Are you sure you want to reset the last commit?
+
+  - key: "<c-h>"
+    command: git reset --hard HEAD^
+    context: files
+    prompts:
+      - type: confirm
+        title: Confirm hard reset
+        body:
+          Are you sure you want to HARD reset to the previous commit? Any unsaved changes will be
+          PERMANENTLY lost!
