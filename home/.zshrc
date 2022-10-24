@@ -1,3 +1,5 @@
+export PATH=/opt/homebrew/bin:$PATH
+
 alias whichshell="echo zsh"
 
 # Antibody update - run this when new bundles are added to bundles.txt

@@ -21,8 +21,8 @@ install. Use at your own risk!
 
 ### Setup on Apple Silicon
 
-If you are on an Apple Silicon machine, there are a few additional steps to set up before installation.
-If you're on an Intel machine, you can skip these steps.
+If you are on an Apple Silicon machine, there are a few additional steps to set up before
+installation. If you're on an Intel machine, you can skip these steps.
 
 In `bash` or `zsh`:
 
@@ -108,7 +108,7 @@ The following manual steps are required:
 
 - Raycast scripts written in JavaScript (found in the `home/.config/raycast` directory) must have
   their shebang lines changed from `#!/usr/local/opt/node@16/bin/node` to
-  `#!/opt/homebrew/opt/node@16/bin/node`
+  `#!/opt/homebrew/opt/node@18/bin/node`
 
 ### Updating
 
