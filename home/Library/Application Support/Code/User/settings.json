@@ -218,6 +218,12 @@
       "commands": ["editor.action.outdentLines"]
     }
   ],
+  "vim.insertModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<C-c>"],
+      "after": ["<Esc>"]
+    }
+  ],
   // -- Vim whichkey
   "whichkey.bindings": [
     {
