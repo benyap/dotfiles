@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Utility for revoking credentials from CLI tools.
+
+CREDENTIAL="$1"
+
+if  [[ $CREDENTIAL = "aws" ]]; then
+  export AWS_PROFILE=
+  echo Unset AWS_PROFILE.
+elif [[ $CREDENTIAL = "gcloud" ]]; then
+  gcloud config unset project
+  gcloud auth revoke --all
+elif [[ $CREDENTIAL = "adc" ]]; then
+  gcloud auth application-default revoke
+else
+  echo Could not revoke unknown credential \""$CREDENTIAL"\".
+  exit 1
+fi

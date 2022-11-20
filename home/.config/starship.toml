@@ -1,4 +1,4 @@
-format = "$sudo$username$directory$git_branch$git_commit$git_status$aws$gcloud$nodejs$python$java$character"
+format = "$sudo$username$directory$git_branch$git_commit$git_status$aws$gcloud$custom$nodejs$python$java$character"
 
 [character]
 success_symbol ="[](bold green)"
@@ -54,6 +54,13 @@ symbol = ""
 
 [gcloud]
 format = '([$symbol ($account(@$domain) )(\($project\) )]($style))'
+style = "#4285F4"
+symbol = ""
+
+[custom.adc]
+when = "test -f ~/.config/gcloud/application_default_credentials.json"
+command = "echo ADC"
+format = "[$symbol ($output )]($style)"
 style = "#4285F4"
 symbol = ""
 
