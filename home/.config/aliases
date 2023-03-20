@@ -68,3 +68,9 @@ alias size="stat -f \"%z bytes\""
 alias diskspace="df -P -kHl"
 alias ds="diskspace"
 alias sudo-exit="sudo --reset-timestamp"
+
+# Services
+alias start:yabai="brew services start yabai"
+alias restart:yabai="brew services restart yabai"
+alias start:skhd="brew services start yabai"
+alias restart:skhd="brew services restart skhd"

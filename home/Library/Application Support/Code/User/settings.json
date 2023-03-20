@@ -10,7 +10,6 @@
   "gitlens.codeLens.authors.enabled": false,
   "gitlens.codeLens.enabled": false,
   "prettier.proseWrap": "always",
-  "prettier.printWidth": 100,
   "files.associations": {
     "fish_variables": "fish",
     ".env": "ini",
@@ -39,6 +38,9 @@
   "projectManager.sortList": "Path",
   "workbench.iconTheme": "material-icon-theme",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.requireConfig": true,
+  "html.format.indentInnerHtml": true,
+  "html.format.enable": false,
   "terminal.external.osxExec": "kitty.app",
   "terminal.integrated.bellDuration": 10000,
   "editor.tabSize": 2,
@@ -50,6 +52,8 @@
   "tailwindCSS.classAttributes": ["class", "className", "ngClass", ".*ClassName"],
   "auto-close-tag.disableOnLanguage": ["typescript"],
   "projectManager.git.baseFolders": ["~/Code", "~/.dotfiles"],
+  "inlineFold.unfoldedOpacity": 0.9,
+  "inlineFold.autoFold": false,
   "todohighlight.keywords": [
     "TODO:",
     "FIXME:",
@@ -68,8 +72,12 @@
   ],
   "json.maxItemsComputed": 50000,
   "window.newWindowDimensions": "maximized",
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
   "[python]": {
-    "editor.defaultFormatter": "ms-python.python"
+    "editor.defaultFormatter": "ms-python.python",
+    "editor.formatOnType": true
   },
   "[xml]": {
     "editor.defaultFormatter": "DotJoshJohnson.xml"
@@ -407,5 +415,5 @@
     }
   ],
   "editor.formatOnSave": true,
-  "window.zoomLevel": 1
+  "window.zoomLevel": 2
 }

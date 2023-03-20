@@ -18,6 +18,8 @@ setup_symlinks() {
     ".config/aliases"
     ".config/tabtab"
     ".config/lvim"
+    ".config/yabai"
+    ".config/skhd"
     ".config/starship.toml"
     "Library/Application Support/Code/User/settings.json"
     "Library/Application Support/Code/User/keybindings.json"

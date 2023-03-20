@@ -114,5 +114,10 @@
     "key": "shift+cmd+r",
     "command": "workbench.action.restartExtensionHost",
     "when": "editorFocus"
+  },
+  {
+    "key": "cmd+k ctrl+f",
+    "command": "inlineFold.toggle",
+    "when": "editorFocus"
   }
 ]

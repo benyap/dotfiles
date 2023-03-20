@@ -54,6 +54,7 @@ _install_vscode_plugins() {
   _install_vscode_plugin "Live Share" "ms-vsliveshare.vsliveshare"
   _install_vscode_plugin "Jupyter" "ms-toolsai.jupyter"
   _install_vscode_plugin "Color Highlight" "naumovs.color-highlight"
+  _install_vscode_plugin "VSCode Twoslash Queries" "orta.vscode-twoslash-queries"
   _install_vscode_plugin "Material Icon Theme" "pkief.material-icon-theme"
   _install_vscode_plugin "Markdown Preview Enhanced" "shd101wyy.markdown-preview-enhanced"
   _install_vscode_plugin "Fish" "skyapps.fish-vscode"
