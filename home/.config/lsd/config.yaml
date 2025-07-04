@@ -1,0 +1,9 @@
+blocks:
+  - user
+  - permission
+  - size
+  - name
+
+ignore-globs:
+  - .git
+

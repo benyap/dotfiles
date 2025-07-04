@@ -1,1 +1,27 @@
+brew "mas"
+brew "stow"
+brew "zsh-autosuggestions"
+brew "zsh-syntax-highlighting"
+brew "starship"
+brew "zoxide"
+brew "fzf"
+brew "fd"
+brew "lsd"
+brew "bat"
+brew "tldr"
+brew "yazi"
+brew "ffmpeg"
+brew "poppler"
+brew "ripgrep"
+brew "jq"
+brew "tmux"
+brew "lazygit"
+brew "wget"
+
+cask "1password"
+cask "raycast"
+cask "font-hack-nerd-font"
+cask "ghostty"
+
+mas "1Password for Safari", id: 1569813296
 

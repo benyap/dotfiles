@@ -1,5 +1,9 @@
 #!/bin/bash
 
+DOTFILES="$HOME/.dotfiles"
+DOTFILES_CONFIG="$HOME/.dotfiles/home/.config"
+echo "ℹ️ Dotfiles directory: $DOTFILES"
+
 # Install xcode
 
 is_xcode_installed() {
@@ -30,14 +34,31 @@ fi
 echo "✅ Installed: git"
 
 # Download dotfiles
-if [[ ! -d "$HOME/.dotfiles" ]]; then
+if [[ ! -d "$DOTFILES" ]]; then
   echo "⏳ Cloning: benyap/dotfiles..."
-  git clone "https://github.com/benyap/dotfiles.git" "$HOME/.dotfiles"
+  git clone "https://github.com/benyap/dotfiles.git" "$DOTFILES"
   echo "✅ Cloned: benyap/dotfiles"
 else
-  echo "⚠️  Directory $HOME/.dotfiles already exists"
+  echo "ℹ️ Directory $DOTFILES already exists"
 fi
 
 # Install apps
 echo "⏳ Installing: Brewfile..."
-brew bundle install --file=~/.dotfiles/Brewfile
+brew bundle install --file=$DOTFILES/Brewfile
+echo "🗑️ Cleaning: Brewfile..."
+brew bundle --force cleanup
+
+# Symlink files
+cd $DOTFILES
+stow -t ~ home
+echo "📦 Symlinked configs with stow"
+
+# Configure tmux
+if [[ ! -d "$DOTFILES_CONFIG/tmux/plugins/tpm" ]]; then
+  echo "⏳ Cloning: tmux-plugins/tpm..."
+  git clone "https://github.com/tmux-plugins/tpm" "$DOTFILES_CONFIG/tmux/plugins/tpm"
+  echo "✅ Cloned: tmux-plugins/tpm"
+else
+  echo "ℹ️ Directory $DOTFILES_CONFIG/tmux/plugins/tpm already exists"
+fi
+

@@ -1,0 +1,89 @@
+format = "$sudo$username$directory$git_branch$git_commit$git_status$aws$gcloud$custom$nodejs$python$java$character"
+
+[character]
+success_symbol ="[](bold green)"
+error_symbol = "[](bold bright-red)"
+vicmd_symbol = "[](bold green)"
+
+[sudo]
+disabled = false
+symbol = ""
+format = "[$symbol ]($style)"
+style = "yellow"
+
+[username]
+style_root = "bold red"
+style_user = "bold green"
+
+[directory]
+format = "([$read_only ]($read_only_style))[$path]($style) "
+style = "blue bold"
+read_only = ""
+read_only_style = "red"
+repo_root_style = "blue bold"
+repo_root_format = "([$read_only ]($read_only_style))[ $repo_root]($repo_root_style)[$path](blue) "
+
+[git_branch]
+style = "purple"
+symbol = ""
+only_attached = true
+
+[git_commit]
+format = '[[at](reset) $hash ]($style)'
+style = "purple"
+
+[git_status]
+format = '([$ahead_behind$staged$untracked$modified$deleted$stashed$conflicted]($style) )'
+style = "green"
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇡${ahead_count}⇣${behind_count}"
+up_to_date = ""
+staged = "+$count"
+conflicted = "[!](bold red)"
+untracked = "?"
+stashed = "^"
+modified = "*"
+renamed = "~"
+deleted = "-"
+
+[aws]
+format = '([$symbol ($profile) ]($style))'
+style = "#fc9a4a"
+symbol = ""
+
+[gcloud]
+format = '([$symbol ($account(@$domain) )(\($project\) )]($style))'
+style = "#4285F4"
+symbol = ""
+
+[custom.adc]
+when = "test -f ~/.config/gcloud/application_default_credentials.json"
+command = "echo ADC"
+format = "[$symbol ($output )]($style)"
+style = "#4285F4"
+symbol = ""
+
+[nodejs]
+format = '([$symbol $version]($style) )'
+version_format = "${major}"
+style = "#5bab54"
+symbol = ""
+not_capable_style = "#ee3333"
+
+[python]
+format = '[$symbol $version ]($style)'
+version_format = "${major}.${minor}"
+style = "#ffe46b"
+symbol = ""
+python_binary = "python3"
+# Only show when venv is active
+detect_extensions = []
+detect_files = []
+
+[java]
+format = '([$symbol ${version} ]($style))'
+version_format = "${major}"
+style = "white"
+symbol = ""
+
