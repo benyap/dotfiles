@@ -44,9 +44,9 @@ fi
 
 # Install apps
 echo "⏳ Installing: Brewfile..."
-brew bundle install --file=$DOTFILES/Brewfile
+brew bundle --file=$DOTFILES/Brewfile install
 echo "🗑️ Cleaning: Brewfile..."
-brew bundle --force cleanup
+brew bundle --file=$DOTFILES/Brewfile --force cleanup
 
 # Symlink files
 cd $DOTFILES
