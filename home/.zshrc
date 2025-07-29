@@ -16,6 +16,8 @@ alias ll="lsd -al"
 alias tree="lsd -al --tree"
 alias cat="bat"
 alias lg="lazygit"
+alias v="nvim"
+alias n="nvim"
 
 # Set up syntax helpers
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -70,6 +72,10 @@ function y() {
 
 # Initialise fzf-git
 source ~/.bin/fzf-git.sh
+
+# Initialise asdf
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+. ~/.asdf/plugins/java/set-java-home.zsh
 
 # Initialise zoxide
 eval "$(zoxide init --cmd cd zsh)"

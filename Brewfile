@@ -17,11 +17,35 @@ brew "jq"
 brew "tmux"
 brew "lazygit"
 brew "wget"
+brew "nvim"
+brew "asdf"
+brew "gpg"
+brew "gawk"
+brew "pnpm"
+brew "stripe-cli"
 
 cask "1password"
+cask "1password-cli"
 cask "raycast"
 cask "font-hack-nerd-font"
 cask "ghostty"
+cask "dockey"
+cask "docker"
+cask "docker-desktop"
+cask "jordanbaird-ice"
+cask "istherenet"
+cask "cleanshot"
+cask "iina"
+cask "figma"
+cask "affinity-photo"
+cask "affinity-designer"
+cask "spotify"
+cask "todoist-app"
+cask "craft"
+cask "vivaldi"
+cask "zoom"
 
-mas "1Password for Safari", id: 1569813296
+mas "Dropover - Easier Drag & Drop", id: 1355679052
+mas "TripMode", id: 1513400665
+mas "Pandan", id: 1569600264
 

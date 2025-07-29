@@ -7,13 +7,13 @@ echo "ℹ️ Dotfiles directory: $DOTFILES"
 # Install xcode
 
 is_xcode_installed() {
-  xcode-select --print-path &> /dev/null
+  xcode-select --print-path &>/dev/null
 }
 
 if ! is_xcode_installed; then
   echo "⏳ Installing: XCode CLI tools..."
-  xcode-select --install &> /dev/null
-  until is_xcode_installed; do sleep 10; done;
+  xcode-select --install &>/dev/null
+  until is_xcode_installed; do sleep 10; done
 fi
 echo "✅ Installed: XCode CLI tools"
 
@@ -53,6 +53,12 @@ cd $DOTFILES
 stow -t ~ home
 echo "📦 Symlinked configs with stow"
 
+# Configure asdf
+echo "⏳ Installing: asdf plugins..."
+asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+asdf plugin add java https://github.com/halcyon/asdf-java.git
+echo "✅  Installed asdf plugins"
+
 # Configure tmux
 if [[ ! -d "$DOTFILES_CONFIG/tmux/plugins/tpm" ]]; then
   echo "⏳ Cloning: tmux-plugins/tpm..."
@@ -61,4 +67,3 @@ if [[ ! -d "$DOTFILES_CONFIG/tmux/plugins/tpm" ]]; then
 else
   echo "ℹ️ Directory $DOTFILES_CONFIG/tmux/plugins/tpm already exists"
 fi
-

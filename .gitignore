@@ -4,4 +4,8 @@
 *.swo
 
 home/.config/tmux/plugins
+home/.config/configstore
+home/.config/raycast/extensions
+home/.config/op
+home/.config/stripe
 
