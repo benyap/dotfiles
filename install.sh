@@ -18,7 +18,6 @@ fi
 echo "✅ Installed: XCode CLI tools"
 
 # Install homebrew
-
 if [[ $(command -v brew) == "" ]]; then
   echo "⏳ Installing: homebrew..."
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -57,7 +56,23 @@ echo "📦 Symlinked configs with stow"
 echo "⏳ Installing: asdf plugins..."
 asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 asdf plugin add java https://github.com/halcyon/asdf-java.git
-echo "✅  Installed asdf plugins"
+echo "✅ Installed asdf plugins"
+
+echo "⏳ Installing: asdf tools..."
+asdf install nodejs latest:22
+asdf install nodejs latest:24
+asdf install java latest:openjdk
+echo "✅ Installed asdf tools"
+
+echo "🔧 Setting: asdf tool versions..."
+asdf set -u nodejs latest:24
+asdf set -u java latest:openjdk
+echo "✅ Set asdf tool versions"
+
+# Configure bat
+echo "🔧 Setting: updating bat cache"
+bat cache --build
+echo "✅ Updated bat cache"
 
 # Configure tmux
 if [[ ! -d "$DOTFILES_CONFIG/tmux/plugins/tpm" ]]; then
