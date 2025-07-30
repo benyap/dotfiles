@@ -23,6 +23,7 @@ brew "gpg"
 brew "gawk"
 brew "pnpm"
 brew "stripe-cli"
+brew "mkcert"
 
 cask "1password"
 cask "1password-cli"
@@ -35,6 +36,7 @@ cask "docker-desktop"
 cask "jordanbaird-ice"
 cask "istherenet"
 cask "cleanshot"
+cask "shottr"
 cask "iina"
 cask "figma"
 cask "affinity-photo"
@@ -43,7 +45,6 @@ cask "spotify"
 cask "todoist-app"
 cask "craft"
 cask "vivaldi"
-cask "zoom"
 
 mas "Dropover - Easier Drag & Drop", id: 1355679052
 mas "TripMode", id: 1513400665
