@@ -43,8 +43,11 @@ cask "affinity-photo"
 cask "affinity-designer"
 cask "spotify"
 cask "todoist-app"
+cask "akiflow"
+cask "asana"
 cask "craft"
 cask "vivaldi"
+cask "thebrowsercompany-dia"
 
 mas "Dropover - Easier Drag & Drop", id: 1355679052
 mas "TripMode", id: 1513400665
