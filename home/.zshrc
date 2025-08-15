@@ -18,6 +18,7 @@ alias cat="bat"
 alias lg="lazygit"
 alias v="nvim"
 alias n="nvim"
+alias tf="terraform"
 
 # Set up syntax helpers
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh

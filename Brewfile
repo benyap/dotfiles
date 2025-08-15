@@ -1,3 +1,5 @@
+tap "hashicorp/tap"
+
 brew "mas"
 brew "stow"
 brew "zsh-autosuggestions"
@@ -24,6 +26,8 @@ brew "gawk"
 brew "pnpm"
 brew "stripe-cli"
 brew "mkcert"
+brew "posting"
+brew "hashicorp/tap/terraform"
 
 cask "1password"
 cask "1password-cli"
