@@ -58,4 +58,5 @@ cask "thebrowsercompany-dia"
 mas "Dropover - Easier Drag & Drop", id: 1355679052
 mas "TripMode", id: 1513400665
 mas "Pandan", id: 1569600264
+mas "Menu Bar Calendar", id: 1558360383
 
