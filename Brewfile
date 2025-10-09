@@ -34,7 +34,6 @@ brew "hashicorp/tap/terraform"
 cask "1password"
 cask "1password-cli"
 cask "raycast"
-cask "font-hack-nerd-font"
 cask "ghostty"
 cask "dockey"
 cask "docker"
@@ -54,6 +53,12 @@ cask "asana"
 cask "craft"
 cask "vivaldi"
 cask "thebrowsercompany-dia"
+
+cask "font-hack-nerd-font"
+cask "font-outfit"
+cask "font-inter"
+cask "font-noto-sans"
+cask "font-poppins"
 
 mas "Dropover - Easier Drag & Drop", id: 1355679052
 mas "TripMode", id: 1513400665
