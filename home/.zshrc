@@ -81,6 +81,10 @@ export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 # Initialise zoxide
 eval "$(zoxide init --cmd cd zsh)"
 
+# Initialise Google Cloud SDK (gcloud)
+if [ -f ~/.google-cloud-sdk/path.zsh.inc ]; then . ~/.google-cloud-sdk/path.zsh.inc; fi
+if [ -f ~/.google-cloud-sdk/completion.zsh.inc ]; then . ~/.google-cloud-sdk/completion.zsh.inc; fi
+
 # Use starship prompt
 eval "$(starship init zsh)"
 
