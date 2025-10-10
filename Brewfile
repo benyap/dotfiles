@@ -51,7 +51,7 @@ cask "todoist-app"
 cask "akiflow"
 cask "asana"
 cask "craft"
-cask "vivaldi"
+cask "zen"
 cask "thebrowsercompany-dia"
 
 cask "font-hack-nerd-font"
