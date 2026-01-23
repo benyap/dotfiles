@@ -85,6 +85,9 @@ eval "$(zoxide init --cmd cd zsh)"
 if [ -f ~/.google-cloud-sdk/path.zsh.inc ]; then . ~/.google-cloud-sdk/path.zsh.inc; fi
 if [ -f ~/.google-cloud-sdk/completion.zsh.inc ]; then . ~/.google-cloud-sdk/completion.zsh.inc; fi
 
+# Source any local configuration as required
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+
 # Use starship prompt
 eval "$(starship init zsh)"
 
