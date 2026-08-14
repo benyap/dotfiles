@@ -3,3 +3,5 @@
 -- Add any additional options here
 
 vim.g.root_spec = { "cwd" }
+
+vim.env.ESLINT_USE_FLAT_CONFIG = true

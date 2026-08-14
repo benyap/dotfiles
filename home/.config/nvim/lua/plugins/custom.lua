@@ -49,7 +49,6 @@ return {
         exclude = {
           "**/.git",
           "**/.git/*",
-          "**/node_modules/*",
           "**/.turbo/*",
           "**/.next/*",
         },
@@ -64,6 +63,24 @@ return {
               "**/.turbo/*",
               "**/.next/*",
             },
+          },
+          explorer = {
+            exclude = {
+              "**/.git",
+              "**/.git/*",
+              "**/.turbo/*",
+              "**/.next/*",
+            },
+            -- Hide node_modules contents unless it's the tree root
+            filter = function(item, ctx)
+              local root = ctx and ctx.cwd or ""
+              local in_node_modules_root = root:find("node_modules[/\\]?$")
+              if in_node_modules_root then
+                return true -- show everything when node_modules is root
+              end
+              -- otherwise hide anything *inside* node_modules
+              return not (item.file or ""):find("node_modules/.")
+            end,
           },
         },
       },
