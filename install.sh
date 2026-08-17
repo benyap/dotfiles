@@ -41,11 +41,11 @@ else
   echo "ℹ️ Directory $DOTFILES already exists"
 fi
 
-# Install apps
+# Install apps with brew
+echo "🔄 Updating homebrew..."
+brew update
 echo "⏳ Installing: Brewfile..."
 brew bundle --file=$DOTFILES/Brewfile install
-echo "🗑️ Cleaning: Brewfile..."
-brew bundle --file=$DOTFILES/Brewfile --force cleanup
 
 # Symlink files
 cd $DOTFILES
