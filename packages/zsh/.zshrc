@@ -71,23 +71,18 @@ function y() {
   rm -f -- "$tmp"
 }
 
-# Initialise fzf-git
-source ~/.bin/fzf-git.sh
-
 # Initialise asdf
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 . ~/.asdf/plugins/java/set-java-home.zsh
 
+# Initialise postgres
+export PATH="/opt/homebrew/opt/postgresql@18/bin:$PATH"
+
 # Initialise zoxide
 eval "$(zoxide init --cmd cd zsh)"
-
-# Initialise Google Cloud SDK (gcloud)
-if [ -f ~/.google-cloud-sdk/path.zsh.inc ]; then . ~/.google-cloud-sdk/path.zsh.inc; fi
-if [ -f ~/.google-cloud-sdk/completion.zsh.inc ]; then . ~/.google-cloud-sdk/completion.zsh.inc; fi
 
 # Source any local configuration as required
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
 # Use starship prompt
 eval "$(starship init zsh)"
-

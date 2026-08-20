@@ -86,4 +86,3 @@ format = '([$symbol ${version} ]($style))'
 version_format = "${major}"
 style = "white"
 symbol = ""
-

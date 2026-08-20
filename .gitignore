@@ -1,21 +1,5 @@
 .DS_Store
+.backup*
 
 *.swp
 *.swo
-
-# Ignore items in .config by default
-home/.config/*
-
-# Allow specific configs
-!home/.config/starship.toml
-!home/.config/bat
-!home/.config/ghostty
-!home/.config/istherenet
-!home/.config/lsd
-!home/.config/nvim
-!home/.config/tmux/tmux.conf
-!home/.config/yazi
-!home/.config/zed
-home/.config/zed/*
-!home/.config/zed/keymap.json
-!home/.config/zed/settings.json
