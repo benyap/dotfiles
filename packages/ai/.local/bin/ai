@@ -1,0 +1,140 @@
+#!/usr/bin/env bash
+# Shared, agent-neutral worktree and research launcher.
+set -euo pipefail
+
+AI_CONFIG_DIR="${AI_CONFIG_DIR:-$HOME/.config/ai}"
+AI_LOCAL_ENV="$AI_CONFIG_DIR/local.env"
+AI_RESEARCH_DIR="${AI_RESEARCH_DIR:-$HOME/Documents/00 - INBOX}"
+
+usage() {
+  cat <<'EOF'
+Usage:
+  ai status
+  ai agent [codex|claude]
+  ai env
+  ai start [--agent codex|claude] <task>
+  ai research [--agent codex|claude] <topic>
+EOF
+}
+
+die() { printf 'ai: %s\n' "$*" >&2; exit 1; }
+
+load_local_env() {
+  if [ -f "$AI_LOCAL_ENV" ]; then
+    # Intentionally machine-local and ignored; never print its values.
+    # shellcheck source=/dev/null
+    source "$AI_LOCAL_ENV"
+  fi
+}
+
+slugify() {
+  local value
+  value="$(printf '%s' "$1" | tr '[:upper:]' '[:lower:]' | tr -cs '[:alnum:]' '-')"
+  value="${value#-}"; value="${value%-}"
+  [ -n "$value" ] || value="task"
+  printf '%s' "${value:0:60}"
+}
+
+select_agent() {
+  local requested="${1:-${AI_AGENT:-}}"
+  case "$requested" in
+    codex|claude) command -v "$requested" >/dev/null 2>&1 || die "$requested is not installed"; printf '%s\n' "$requested" ;;
+    '')
+      if command -v codex >/dev/null 2>&1; then printf '%s\n' codex
+      elif command -v claude >/dev/null 2>&1; then printf '%s\n' claude
+      else die "neither codex nor claude is available on PATH"; fi
+      ;;
+    *) die "unknown agent '$requested' (choose codex or claude)" ;;
+  esac
+}
+
+render_prompt() {
+  local template="$1" task="$2" note_path="${3:-}" line
+  while IFS= read -r line || [ -n "$line" ]; do
+    line="${line//\{\{TASK\}\}/$task}"
+    line="${line//\{\{TOPIC\}\}/$task}"
+    line="${line//\{\{NOTE_PATH\}\}/$note_path}"
+    printf '%s\n' "$line"
+  done < "$template"
+}
+
+launch() {
+  local agent="$1" prompt="$2"
+  [ "${AI_NO_LAUNCH:-0}" = "1" ] && { printf 'ai: launch skipped (AI_NO_LAUNCH=1)\n'; return; }
+  case "$agent" in
+    codex) codex "$prompt" ;;
+    claude)
+      claude \
+        --disallowedTools 'Read(//**/.env) Read(//**/.env.*) Read(//**/secrets/**) Read(//**/.aws/credentials) Read(//**/.ssh/**) Read(//**/.netrc) Read(//**/.npmrc) Read(//**/.pypirc) Read(//**/.docker/config.json) Read(//**/.config/gh/hosts.yml) Read(//**/.config/gcloud/**) Read(//**/.config/op/**)' \
+        "$prompt"
+      ;;
+  esac
+}
+
+parse_agent() {
+  AI_REQUESTED_AGENT=""
+  if [ "${1:-}" = "--agent" ]; then
+    [ -n "${2:-}" ] || die "--agent needs codex or claude"
+    AI_REQUESTED_AGENT="$2"; shift 2
+  fi
+  [ "$#" -gt 0 ] || die "a task or topic is required"
+  AI_ARGUMENT="$*"
+}
+
+cmd_start() {
+  parse_agent "$@"
+  local root repo parent slug branch worktree agent prompt
+  root="$(git rev-parse --show-toplevel 2>/dev/null)" || die "start must run inside a Git repository"
+  repo="$(basename "$root")"; parent="$(dirname "$root")"; slug="$(slugify "$AI_ARGUMENT")"
+  branch="agent/$slug"; worktree="$parent/$repo-$slug"
+  if [ -e "$worktree" ]; then
+    git -C "$root" worktree list --porcelain | grep -Fqx "worktree $worktree" || die "worktree path already exists: $worktree"
+  elif git -C "$root" show-ref --verify --quiet "refs/heads/$branch"; then
+    git -C "$root" worktree add "$worktree" "$branch"
+  else
+    git -C "$root" worktree add -b "$branch" "$worktree"
+  fi
+  agent="$(select_agent "$AI_REQUESTED_AGENT")"
+  prompt="$(render_prompt "$AI_CONFIG_DIR/prompts/start.md" "$AI_ARGUMENT")"
+  printf 'ai: worktree %s on %s (%s)\n' "$worktree" "$branch" "$agent"
+  ( cd "$worktree" && launch "$agent" "$prompt" )
+}
+
+cmd_research() {
+  parse_agent "$@"
+  local date slug note_path agent prompt line
+  date="$(date +%F)"; slug="$(slugify "$AI_ARGUMENT")"
+  note_path="$AI_RESEARCH_DIR/$date-$slug.md"
+  mkdir -p "$AI_RESEARCH_DIR"
+  if [ ! -e "$note_path" ]; then
+    while IFS= read -r line || [ -n "$line" ]; do
+      line="${line//\{\{TOPIC\}\}/$AI_ARGUMENT}"
+      line="${line//\{\{DATE\}\}/$date}"
+      printf '%s\n' "$line"
+    done < "$AI_CONFIG_DIR/templates/research-note.md" > "$note_path"
+  fi
+  agent="$(select_agent "$AI_REQUESTED_AGENT")"
+  prompt="$(render_prompt "$AI_CONFIG_DIR/prompts/research.md" "$AI_ARGUMENT" "$note_path")"
+  printf 'ai: research note %s (%s)\n' "$note_path" "$agent"
+  launch "$agent" "$prompt"
+}
+
+cmd_status() {
+  printf 'ai config: %s\n' "$AI_CONFIG_DIR"
+  printf 'local overrides: %s\n' "$( [ -f "$AI_LOCAL_ENV" ] && printf loaded || printf absent )"
+  printf 'research directory: %s\n' "$AI_RESEARCH_DIR"
+  printf 'codex: %s\n' "$(command -v codex || printf absent)"
+  printf 'claude: %s\n' "$(command -v claude || printf absent)"
+  printf 'selected agent: %s\n' "$(select_agent 2>/dev/null || printf unavailable)"
+}
+
+load_local_env
+case "${1:-}" in
+  start) shift; cmd_start "$@" ;;
+  research) shift; cmd_research "$@" ;;
+  status) cmd_status ;;
+  env) printf 'ai: local override file is %s (%s)\n' "$AI_LOCAL_ENV" "$( [ -f "$AI_LOCAL_ENV" ] && printf loaded || printf absent )" ;;
+  agent) shift; [ "$#" -le 1 ] || die "agent accepts at most one value"; select_agent "${1:-}" ;;
+  -h|--help|help|'') usage ;;
+  *) die "unknown command '$1'" ;;
+esac

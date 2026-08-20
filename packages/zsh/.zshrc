@@ -8,6 +8,11 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 
 DISABLE_AUTO_TITLE=true
 
+# Locally installed command-line tools, including the shared AI workflow.
+# Keep this early so interactive terminals in Ghostty, tmux, and Zed resolve
+# the same commands.
+export PATH="$HOME/.local/bin:$PATH"
+
 # Configure aliases
 alias reload="source ~/.zshrc"
 alias c="clear"
