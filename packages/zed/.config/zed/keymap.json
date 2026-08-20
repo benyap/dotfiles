@@ -7,16 +7,29 @@
 // from the command palette.
 [
   {
-    "context": "vim_mode == normal && !Menu && !Terminal",
+    "context": "EmptyPane",
+    "bindings": {
+      "space space": "file_finder::Toggle",
+      "space /": "pane::DeploySearch",
+      "space ,": "tab_switcher::ToggleAll"
+    }
+  },
+  {
+    "context": "Picker > Editor",
+    "bindings": {
+      "ctrl-j": "menu::SelectNext",
+      "ctrl-k": "menu::SelectPrevious"
+    }
+  },
+  {
+    "context": "vim_mode == normal && !Menu && !Terminal && !AcpThread",
     "bindings": {
       "space space": "file_finder::Toggle",
       "space /": "text_finder::Toggle",
       "space e": "workspace::ToggleLeftDock",
       "space r": "workspace::ToggleRightDock",
-      "space t": "terminal_panel::ToggleFocus",
+      "space ,": "tab_switcher::ToggleAll",
       "space o": "outline::Toggle",
-      "space g g": "git_panel::ToggleFocus",
-      "space g b": "git::Branch",
       "space b d": "pane::CloseActiveItem",
       "space b n": "pane::ActivateNextItem",
       "space b p": "pane::ActivatePreviousItem",
@@ -35,7 +48,7 @@
     },
   },
   {
-    "context": "Dock && !Terminal",
+    "context": "Dock && !Terminal && !AcpThread",
     "bindings": {
       "space space": "file_finder::Toggle",
       "ctrl-h": "workspace::ActivatePaneLeft",
