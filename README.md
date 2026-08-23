@@ -22,7 +22,7 @@ dotfiles/
     │           └── init.vim
     └── <tool>/
         └── .<tool>/
-            └── config.toml
+            └── ...
 ```
 
 `install.sh` symlinks each package's contents to the matching path under `$HOME`, handles conflicts, and runs any package-specific setup via hooks.
@@ -45,7 +45,7 @@ This installs the dotfiles into the `~/.dotfiles` directory. Behind the scenes i
 2. Clones this repo to `~/.dotfiles`.
 3. Hands off to the cloned copy of `install.sh`, which discovers and stows every package.
 
-It's safe to re-run this command later — if `~/.dotfiles` already exists, it skips the clone and just re-runs the stow step, so running it twice never duplicates anything.
+If `~/.dotfiles` already exists, it skips the clone and just re-runs the stow step.
 
 ## Managing the dotfiles
 
@@ -59,11 +59,11 @@ git pull
 ./install.sh
 ```
 
-`./install.sh` re-links anything new and is a no-op for packages that are already correctly linked — safe to run as often as you like, even for packages with deeply nested files.
+`./install.sh` re-links anything new and is a no-op for packages that are already correctly linked. It is safe to run as often as you like, even for packages with deeply nested files.
 
 ### Existing machine with pre-existing config files
 
-If real (non-symlinked) files already exist at a target path — say `~/.zshrc` predates this repo — `install.sh` automatically backs them up before linking. See [Conflicts and backups](#conflicts-and-backups).
+If real (non-symlinked) files already exist at a target path, `install.sh` automatically backs them up before linking. See [Conflicts and backups](#conflicts-and-backups).
 
 ## Preflight checks
 
@@ -76,14 +76,14 @@ Both the bootstrap one-liner and every normal run of `./install.sh` check for re
 | git                      | all        | Installed via Homebrew / `apt` / `pacman`, whichever is available              |
 | GNU Stow                 | all        | Installed via Homebrew / `apt` / `pacman`, whichever is available              |
 
-All checks are idempotent — on a machine that already has everything, they're just `command -v` lookups and add negligible overhead to a normal `./install.sh` run.
+All checks are idempotent. On a machine that already has everything, they're just `command -v` lookups and add negligible overhead to a normal `./install.sh` run.
 
 ## `install.sh` usage
 
 `install.sh` detects which mode it's running in automatically:
 
-- **Bootstrap mode** — no backing file on disk (e.g. piped via `curl | bash`). Runs preflight checks, clones the repo to `~/.dotfiles`, then re-executes the on-disk copy.
-- **Normal mode** — running from an actual file inside a cloned repo (e.g. `cd ~/.dotfiles && ./install.sh`). Discovers and stows/unstows packages under `packages/`.
+- **Bootstrap mode**: no backing file on disk (e.g. piped via `curl | bash`). Runs preflight checks, clones the repo to `~/.dotfiles`, then re-executes the on-disk copy.
+- **Normal mode**: running from an actual file inside a cloned repo (e.g. `cd ~/.dotfiles && ./install.sh`). Discovers and stows/unstows packages under `packages/`.
 
 Once inside the repo, normal-mode flags:
 
@@ -98,7 +98,7 @@ Once inside the repo, normal-mode flags:
 
 Flags can be combined and appear in any order, e.g. `./install.sh -D -n <package>`.
 
-Packages are **discovered automatically** — every directory under `packages/` is treated as a package. Since anything not meant to be stowed simply doesn't live under `packages/`, there's no ignore list to maintain. Adding a new package requires no edits to `install.sh`.
+Packages are **discovered automatically**. Every directory under `packages/` is treated as a package. Adding a new package requires no edits to `install.sh`.
 
 ### Conflicts and backups
 
@@ -108,7 +108,7 @@ Before symlinking a package, `install.sh` checks whether a real file already sit
 ~/.dotfiles/.backup/<timestamp>/
 ```
 
-so you can recover or diff it afterward. This directory is gitignored — backups stay local to the machine and are never committed.
+so you can recover or diff it afterward. This directory is gitignored - backups stay local to the machine and are never committed.
 
 Broken symlinks left over from a previous run are cleaned up automatically.
 
@@ -131,7 +131,7 @@ After a run, `install.sh` prints exactly which top-level paths were touched, e.g
    ```bash
    ./install.sh tmux
    ```
-3. If the package needs setup beyond symlinking (installing a plugin manager, writing an ignore file, checking a CLI is installed), add `hooks/tmux.sh` — see [Hooks](#hooks). If it doesn't need anything special, skip this step entirely.
+3. If the package needs setup beyond symlinking (installing a plugin manager, writing an ignore file, checking a CLI is installed), add `hooks/tmux.sh` (see [Hooks](#hooks)). If it doesn't need anything special, skip this step.
 
 ## Hooks
 
@@ -144,16 +144,16 @@ Package-specific logic lives in `hooks/<package>.sh`, not in `install.sh`. Each 
 | `pre_unstow`  | before the package's symlinks are removed |
 | `post_unstow` | after the package's symlinks are removed  |
 
-All are optional — a package with no special needs has no hook file at all. Hooks run in an isolated subshell with `$PKG_PATH`, `$TARGET_DIR`, `$DRY_RUN`, and the `log`/`warn`/`err` helpers in scope.
+All hooks are optional. A package with no special needs has no hook file at all. Hooks run in an isolated subshell with `$PKG_PATH`, `$TARGET_DIR`, `$DRY_RUN`, and the `log`/`warn`/`err` helpers in scope.
 
 A hook typically handles things stow itself can't: writing a `.gitignore` for a tool's runtime/secret files, creating a placeholder for machine-local values, or warning if a CLI the package depends on isn't installed yet. See whatever hooks currently exist under `hooks/` for concrete examples specific to this repo.
 
 ## Secrets
 
-The rule: **anything that's a credential, token, or runtime/session data never gets committed — only the pattern for handling it lives in this repo.** Two mechanisms cover most cases:
+The rule: **anything that's a credential, token, or runtime/session data never gets committed - only the pattern for handling it lives in this repo.** Two mechanisms cover most cases:
 
 **1. Per-package `.gitignore` for tool-managed secrets.**
-Many CLIs write auth files, session logs, or history directly into their own config directory alongside the settings you _do_ want to track. Add a `.gitignore` inside that package (e.g. `packages/<package>/.<tool>/.gitignore`) listing whatever that specific tool writes — check that tool's docs for exact filenames, since they vary and can change between versions. A hook's `post_stow` can create this file automatically if it doesn't exist yet, so it's there even before the tool has run for the first time.
+Many CLIs write auth files, session logs, or history directly into their own config directory alongside the settings you _do_ want to track. Add a `.gitignore` inside that package (e.g. `packages/<package>/.<tool>/.gitignore`) listing whatever that specific tool writes. A hook's `post_stow` can create this file automatically if it doesn't exist yet, so it's there even before the tool has run for the first time.
 
 **2. A local, untracked file for exported values (API keys, tokens).**
 Keep these out of any tracked config entirely. Common pattern for shell-sourced secrets:
@@ -170,7 +170,7 @@ export SOME_API_KEY="..."
 
 A hook can create a placeholder `~/.zshrc.local` on first run so there's somewhere obvious to put real values — fill them in after cloning on each new machine.
 
-**On a new machine:** re-authenticate any CLI tools after stowing — credentials stored in a system keyring or auth file don't travel with the repo, only the config that points at them does.
+**On a new machine:** re-authenticate any CLI tools after stowing. Credentials stored in a system keyring or auth file don't travel with the repo, only the config that points at them does.
 
 **Before every commit that touches a package with secrets nearby:** run `git diff` and check nothing sensitive slipped into a tracked file.
 
@@ -183,7 +183,7 @@ To remove symlinks without deleting the underlying files:
 ./install.sh -D <package>     # unstow just one package
 ```
 
-This only removes the symlinks stow created — it never touches real files a tool wrote directly, like auth files or session logs. Empty directories left behind after unstowing are usually cleaned up automatically by stow; if not:
+This only removes the symlinks stow created. It never touches real files a tool wrote directly, like auth files or session logs. Empty directories left behind after unstowing are usually cleaned up automatically by stow; if not:
 
 ```bash
 find ~/.config -type d -empty
@@ -197,12 +197,12 @@ This repo is already configured to bootstrap from `benyap/dotfiles`:
 DOTFILES_REPO="${DOTFILES_REPO:-https://github.com/benyap/dotfiles.git}"
 ```
 
-If you fork this repo, update that line in `install.sh` (and the URL in [First time setup](#first-time-setup) and in `install.sh`'s own header comment) to point at your fork instead. Commit and push — the raw URL only resolves once the file exists on the default branch.
+If you fork this repo, update that line in `install.sh` (and the URL in [First time setup](#first-time-setup) and in `install.sh`'s own header comment) to point at your fork instead.
 
 ## Maintenance checklist
 
-- **Editing a config?** Edit the file inside `packages/<package>/...`, not the symlink target in `$HOME` — they're the same file, but editing inside the repo makes it obvious what to `git commit`.
+- **Editing a config?** Edit the file inside `packages/<package>/...`, not the symlink target in `$HOME`.
 - **Adding a package?** See [Adding a new package](#adding-a-new-package) above. No `install.sh` changes needed.
-- **Rotating a secret?** Update the relevant untracked local file (e.g. `~/.zshrc.local`) on each machine individually — it's intentionally never synced via git.
+- **Rotating a secret?** Update the relevant untracked local file (e.g. `~/.zshrc.local`) on each machine individually.
 - **Removing a package?** `./install.sh -D <package>`, then `rm -rf packages/<package>/` and commit.
 - **Before committing:** run `./install.sh -n` to confirm nothing unexpected would change, and `git diff` to make sure no secrets snuck into a tracked file.
