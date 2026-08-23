@@ -6,7 +6,15 @@ export HOMEBREW_NO_ANALYTICS=1
 # https://docs.brew.sh/Manpage#environment
 export HOMEBREW_NO_AUTO_UPDATE=1
 
+# Opt out of Vercel CLI telemetry
+export DISABLE_TELEMETRY=1
+
 DISABLE_AUTO_TITLE=true
+
+# Locally installed command-line tools, including the shared AI workflow.
+# Keep this early so interactive terminals in Ghostty, tmux, and Zed resolve
+# the same commands.
+export PATH="$HOME/.local/bin:$PATH"
 
 # Configure aliases
 alias reload="source ~/.zshrc"
@@ -77,6 +85,13 @@ export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
 # Initialise postgres
 export PATH="/opt/homebrew/opt/postgresql@18/bin:$PATH"
+
+# Initialise pnpm
+export PNPM_HOME="~/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
 
 # Initialise zoxide
 eval "$(zoxide init --cmd cd zsh)"
