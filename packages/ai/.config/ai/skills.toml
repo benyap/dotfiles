@@ -1,0 +1,7 @@
+# Provenance for third-party global skills managed by this package.
+#
+# [[skill]]
+# name = "example-skill"
+# source = "https://github.com/owner/repository"
+# revision = "reviewed-commit-sha"
+# path = "skills/example-skill"
