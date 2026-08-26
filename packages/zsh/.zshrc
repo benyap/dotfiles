@@ -16,6 +16,9 @@ DISABLE_AUTO_TITLE=true
 # the same commands.
 export PATH="$HOME/.local/bin:$PATH"
 
+# Private Brain helper, when this machine has a Brain checkout.
+[[ -x "$HOME/.brain/scripts/brain" ]] && export PATH="$HOME/.brain/scripts:$PATH"
+
 # Configure aliases
 alias reload="source ~/.zshrc"
 alias c="clear"

@@ -1,19 +1,19 @@
 ---
 name: knowledge-base
-description: Search and maintain the user's portable, topic-organized knowledge base under ~/.config/ai/knowledge-base. Use when a prior fix, workaround, setup note, or personal technical convention may be relevant.
+description: Search and maintain the user's portable, topic-organized knowledge base under ~/.brain/topics. Use when a prior fix, workaround, setup note, or personal technical convention may be relevant.
 ---
 
 # Personal Knowledge Base
 
-The canonical knowledge base is at `~/.config/ai/knowledge-base/`. Search it before solving a problem that may have a previously documented fix or personal convention.
+The canonical knowledge base is at `~/.brain/topics/`. Search it before solving a problem that may have a previously documented fix or personal convention.
 
 ## Search
 
 Search filenames and entry content first, then read only the matching entries:
 
 ```sh
-rg --files ~/.config/ai/knowledge-base
-rg -n -i 'keyword|phrase' ~/.config/ai/knowledge-base
+rg --files ~/.brain/topics
+rg -n -i 'keyword|phrase' ~/.brain/topics
 ```
 
 Frontmatter uses compact YAML fields:
@@ -33,7 +33,11 @@ Use filenames, `title`, `summary`, and `topics` to identify relevant entries. Do
 Create one Markdown file per fix or piece of knowledge under a relevant topic directory, for example:
 
 ```text
-~/.config/ai/knowledge-base/development/tool-problem.md
+~/.brain/topics/development/tool-problem.md
 ```
 
 Keep frontmatter compact and make the `summary` useful for search. Put commands, cause, fix, verification, and important caveats in the body. Do not add secrets, credentials, tokens, or runtime data.
+
+## Editing policy
+
+Read the knowledge base by default. Create or modify notes only when the user explicitly requests it. Preserve the vault's existing structure and conventions.

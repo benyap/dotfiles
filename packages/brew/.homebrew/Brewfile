@@ -45,6 +45,7 @@ cask "craft"
 cask "chatgpt"
 cask "codex"
 cask "zed"
+cask "obsidian"
 
 cask "font-hack-nerd-font"
 cask "font-inter"
