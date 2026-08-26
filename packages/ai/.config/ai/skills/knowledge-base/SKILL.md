@@ -12,8 +12,8 @@ The canonical knowledge base is at `~/.brain/topics/`. Search it before solving 
 Search filenames and entry content first, then read only the matching entries:
 
 ```sh
-rg --files ~/.brain/topics
-rg -n -i 'keyword|phrase' ~/.brain/topics
+rg --files -g '!**/.obsidian/**' ~/.brain/topics
+rg -n -i -g '!**/.obsidian/**' 'keyword|phrase' ~/.brain/topics
 ```
 
 Frontmatter uses compact YAML fields:
@@ -41,3 +41,5 @@ Keep frontmatter compact and make the `summary` useful for search. Put commands,
 ## Editing policy
 
 Read the knowledge base by default. Create or modify notes only when the user explicitly requests it. Preserve the vault's existing structure and conventions.
+
+Treat `~/.brain/topics/.obsidian/` as Obsidian application data, not knowledge-base content. Do not search, read, create, modify, or delete files in that directory.
