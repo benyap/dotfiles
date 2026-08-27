@@ -1,0 +1,43 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "timestamp",
+  "title": "Timestamp",
+  "description": "Display and copy the current Unix timestamp in milliseconds.",
+  "icon": "icon.png",
+  "categories": [
+    "Developer Tools"
+  ],
+  "author": "benyap",
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "current-timestamp",
+      "title": "Current Timestamp",
+      "description": "Copy the current Unix timestamp in milliseconds",
+      "mode": "no-view",
+      "keywords": [
+        "unix",
+        "epoch",
+        "milliseconds",
+        "date",
+        "time"
+      ]
+    }
+  ],
+  "scripts": {
+    "dev": "ray develop",
+    "build": "ray build",
+    "lint": "ray lint",
+    "fix-lint": "ray lint --fix"
+  },
+  "dependencies": {
+    "@raycast/api": "1.100.0"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "2.0.4",
+    "@types/node": "22.0.0",
+    "eslint": "9.0.0",
+    "prettier": "3.0.0",
+    "typescript": "7.0.2"
+  }
+}
