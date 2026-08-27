@@ -11,7 +11,8 @@
     "bindings": {
       "space space": "file_finder::Toggle",
       "space /": "pane::DeploySearch",
-      "space ,": "tab_switcher::ToggleAll"
+      "space ,": "tab_switcher::ToggleAll",
+      "space w w": "projects::OpenRecent",
     }
   },
   {
@@ -38,6 +39,7 @@
       "space w s": "pane::SplitDown",
       "space w v": "pane::SplitRight",
       "space w d": "pane::CloseAllItems",
+      "space w w": "projects::OpenRecent",
       "shift-l": "pane::ActivateNextItem",
       "shift-h": "pane::ActivatePreviousItem",
       "ctrl-h": "workspace::ActivatePaneLeft",
