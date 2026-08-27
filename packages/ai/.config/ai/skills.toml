@@ -5,3 +5,135 @@
 # source = "https://github.com/owner/repository"
 # revision = "reviewed-commit-sha"
 # path = "skills/example-skill"
+
+[[skill]]
+name = "ask-matt"
+source = "https://github.com/mattpocock/skills"
+revision = "6654f6b60cd9d5be8b54c6fafe44346dabeb3b76"
+path = "skills/engineering/ask-matt"
+
+[[skill]]
+name = "code-review"
+source = "https://github.com/mattpocock/skills"
+revision = "6654f6b60cd9d5be8b54c6fafe44346dabeb3b76"
+path = "skills/engineering/code-review"
+
+[[skill]]
+name = "codebase-design"
+source = "https://github.com/mattpocock/skills"
+revision = "6654f6b60cd9d5be8b54c6fafe44346dabeb3b76"
+path = "skills/engineering/codebase-design"
+
+[[skill]]
+name = "diagnosing-bugs"
+source = "https://github.com/mattpocock/skills"
+revision = "6654f6b60cd9d5be8b54c6fafe44346dabeb3b76"
+path = "skills/engineering/diagnosing-bugs"
+
+[[skill]]
+name = "domain-modeling"
+source = "https://github.com/mattpocock/skills"
+revision = "6654f6b60cd9d5be8b54c6fafe44346dabeb3b76"
+path = "skills/engineering/domain-modeling"
+
+[[skill]]
+name = "grill-with-docs"
+source = "https://github.com/mattpocock/skills"
+revision = "6654f6b60cd9d5be8b54c6fafe44346dabeb3b76"
+path = "skills/engineering/grill-with-docs"
+
+[[skill]]
+name = "implement"
+source = "https://github.com/mattpocock/skills"
+revision = "6654f6b60cd9d5be8b54c6fafe44346dabeb3b76"
+path = "skills/engineering/implement"
+
+[[skill]]
+name = "improve-codebase-architecture"
+source = "https://github.com/mattpocock/skills"
+revision = "6654f6b60cd9d5be8b54c6fafe44346dabeb3b76"
+path = "skills/engineering/improve-codebase-architecture"
+
+[[skill]]
+name = "prototype"
+source = "https://github.com/mattpocock/skills"
+revision = "6654f6b60cd9d5be8b54c6fafe44346dabeb3b76"
+path = "skills/engineering/prototype"
+
+[[skill]]
+name = "research"
+source = "https://github.com/mattpocock/skills"
+revision = "6654f6b60cd9d5be8b54c6fafe44346dabeb3b76"
+path = "skills/engineering/research"
+
+[[skill]]
+name = "resolving-merge-conflicts"
+source = "https://github.com/mattpocock/skills"
+revision = "6654f6b60cd9d5be8b54c6fafe44346dabeb3b76"
+path = "skills/engineering/resolving-merge-conflicts"
+
+[[skill]]
+name = "setup-matt-pocock-skills"
+source = "https://github.com/mattpocock/skills"
+revision = "6654f6b60cd9d5be8b54c6fafe44346dabeb3b76"
+path = "skills/engineering/setup-matt-pocock-skills"
+
+[[skill]]
+name = "tdd"
+source = "https://github.com/mattpocock/skills"
+revision = "6654f6b60cd9d5be8b54c6fafe44346dabeb3b76"
+path = "skills/engineering/tdd"
+
+[[skill]]
+name = "to-spec"
+source = "https://github.com/mattpocock/skills"
+revision = "6654f6b60cd9d5be8b54c6fafe44346dabeb3b76"
+path = "skills/engineering/to-spec"
+
+[[skill]]
+name = "to-tickets"
+source = "https://github.com/mattpocock/skills"
+revision = "6654f6b60cd9d5be8b54c6fafe44346dabeb3b76"
+path = "skills/engineering/to-tickets"
+
+[[skill]]
+name = "triage"
+source = "https://github.com/mattpocock/skills"
+revision = "6654f6b60cd9d5be8b54c6fafe44346dabeb3b76"
+path = "skills/engineering/triage"
+
+[[skill]]
+name = "wayfinder"
+source = "https://github.com/mattpocock/skills"
+revision = "6654f6b60cd9d5be8b54c6fafe44346dabeb3b76"
+path = "skills/engineering/wayfinder"
+
+[[skill]]
+name = "wizard"
+source = "https://github.com/mattpocock/skills"
+revision = "6654f6b60cd9d5be8b54c6fafe44346dabeb3b76"
+path = "skills/engineering/wizard"
+
+[[skill]]
+name = "git-guardrails-claude-code"
+source = "https://github.com/mattpocock/skills"
+revision = "6654f6b60cd9d5be8b54c6fafe44346dabeb3b76"
+path = "skills/misc/git-guardrails-claude-code"
+
+[[skill]]
+name = "migrate-to-shoehorn"
+source = "https://github.com/mattpocock/skills"
+revision = "6654f6b60cd9d5be8b54c6fafe44346dabeb3b76"
+path = "skills/misc/migrate-to-shoehorn"
+
+[[skill]]
+name = "scaffold-exercises"
+source = "https://github.com/mattpocock/skills"
+revision = "6654f6b60cd9d5be8b54c6fafe44346dabeb3b76"
+path = "skills/misc/scaffold-exercises"
+
+[[skill]]
+name = "setup-pre-commit"
+source = "https://github.com/mattpocock/skills"
+revision = "6654f6b60cd9d5be8b54c6fafe44346dabeb3b76"
+path = "skills/misc/setup-pre-commit"
