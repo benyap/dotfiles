@@ -42,4 +42,6 @@ Keep frontmatter compact and make the `summary` useful for search. Put commands,
 
 Read the knowledge base by default. Create or modify notes only when the user explicitly requests it. Preserve the vault's existing structure and conventions.
 
+Before requesting write permission, resolve the intended knowledge-base path to its real filesystem location. If any path component is a symbolic link, follow it and request write permission for the resolved directory rather than the symbolic-link path. Continue to use `~/.brain/topics/` as the user-facing canonical path in notes and explanations.
+
 Treat `~/.brain/topics/.obsidian/` as Obsidian application data, not knowledge-base content. Do not search, read, create, modify, or delete files in that directory.
