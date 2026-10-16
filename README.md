@@ -146,6 +146,19 @@ Package-specific logic lives in `hooks/<package>.sh`, not in `install.sh`. Each 
 
 All hooks are optional. A package with no special needs has no hook file at all. Hooks run in an isolated subshell with `$PKG_PATH`, `$TARGET_DIR`, `$DRY_RUN`, and the `log`/`warn`/`err` helpers in scope.
 
+### Hook dry-run contract
+
+When `DRY_RUN=1` (including `./install.sh -n`), hooks must not change the system. This includes cloning or downloading files, installing or uninstalling packages, updating caches, starting services, and reloading application state. Guard every mutating hook function before its first side effect:
+
+```bash
+if [[ "${DRY_RUN:-0}" == "1" ]]; then
+    echo "⏭️  Skipping setup during dry run"
+    return 0
+fi
+```
+
+Apply the guard independently to `pre_stow`, `post_stow`, `pre_unstow`, and `post_unstow` whenever those functions perform mutations. Read-only checks and informative messages are allowed during a dry run.
+
 A hook typically handles things stow itself can't: writing a `.gitignore` for a tool's runtime/secret files, creating a placeholder for machine-local values, or warning if a CLI the package depends on isn't installed yet. See whatever hooks currently exist under `hooks/` for concrete examples specific to this repo.
 
 ## Secrets
