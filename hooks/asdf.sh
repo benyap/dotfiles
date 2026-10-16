@@ -1,4 +1,9 @@
 post_stow() {
+    if [[ "${DRY_RUN:-0}" == "1" ]]; then
+        echo "⏭️  Skipping asdf setup during dry run"
+        return 0
+    fi
+
     # Node.js
     asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
     asdf install nodejs latest:24
@@ -19,6 +24,11 @@ post_stow() {
 }
 
 pre_unstow() {
+    if [[ "${DRY_RUN:-0}" == "1" ]]; then
+        echo "⏭️  Skipping asdf uninstall during dry run"
+        return 0
+    fi
+
     asdf list nodejs | sed 's/^[* ]*//' | xargs -n1 asdf uninstall nodejs
     asdf list python | sed 's/^[* ]*//' | xargs -n1 asdf uninstall python
     asdf list java | sed 's/^[* ]*//' | xargs -n1 asdf uninstall java
