@@ -28,6 +28,7 @@ brew "hashicorp/tap/terraform"
 brew "awscli"
 brew "mongodb-community"
 brew "postgresql@18"
+brew "mole"
 
 cask "gcloud-cli"
 cask "1password"
@@ -46,6 +47,12 @@ cask "chatgpt"
 cask "codex"
 cask "zed"
 cask "obsidian"
+cask "macpacker"
+cask "vorssaint"
+cask "textream"
+cask "handy"
+cask "forel"
+cask "clop"
 
 cask "font-hack-nerd-font"
 cask "font-inter"
@@ -53,4 +60,3 @@ cask "font-inter"
 mas "Dropover - Easier Drag & Drop", id: 1355679052
 mas "TripMode", id: 1513400665
 mas "Pandan", id: 1569600264
-mas "Menu Bar Calendar", id: 1558360383
