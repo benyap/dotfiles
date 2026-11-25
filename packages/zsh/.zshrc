@@ -30,6 +30,7 @@ alias lg="lazygit"
 alias v="nvim"
 alias n="nvim"
 alias tf="terraform"
+alias tm="tmux new-session -A"
 
 # Set up syntax helpers
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
