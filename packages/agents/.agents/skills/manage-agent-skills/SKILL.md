@@ -5,12 +5,12 @@ description: Manage globally shared agent skills through this dotfiles package, 
 
 # Manage Agent Skills
 
-Manage canonical skills from `packages/ai/.config/ai/skills/`, which GNU Stow exposes at `~/.config/ai/skills/`. Keep agent-specific adapters separate from the canonical skill source.
+Manage canonical skills from `packages/agents/.agents/skills/`, which GNU Stow exposes at `~/.agents/skills/`. Keep agent-specific adapters separate from the canonical skill source.
 
 ## Source of Truth
 
-- Keep approved skill directories and their complete contents in `packages/ai/.config/ai/skills/` and commit them to Git.
-- Treat `packages/ai/.config/ai/skills.toml` as the provenance record for third-party skills. For each imported skill, record its name, source URL or repository, reviewed commit SHA, and source subpath.
+- Keep approved skill directories and their complete contents in `packages/agents/.agents/skills/` and commit them to Git.
+- Treat `packages/agents/.agents/skills.toml` as the provenance record for third-party skills. For each imported skill, record its name, source URL or repository, reviewed commit SHA, and source subpath.
 - Do not add a provenance entry for a self-authored skill.
 
 ## Third-Party Skills
@@ -21,15 +21,15 @@ Manage canonical skills from `packages/ai/.config/ai/skills/`, which GNU Stow ex
 
 ## Agent-Specific Configuration
 
-Add an adapter for each agent that should discover a shared skill. Adapters must point to the canonical directory rather than duplicate its contents.
+Pi and current Codex discover `~/.agents/skills/` directly. For agents that need an adapter, point it to the canonical directory rather than duplicate its contents.
 
 ### Codex
 
-- Add or update `packages/ai/.codex/skills/<skill-name>` as a relative symlink to `packages/ai/.config/ai/skills/<skill-name>`.
+- Existing compatibility adapters in `packages/agents/.codex/skills/<skill-name>` are relative symlinks to `packages/agents/.agents/skills/<skill-name>`.
 - Stow exposes that adapter at `~/.codex/skills/<skill-name>`.
 - Do not install candidates directly into `~/.codex/skills/`.
 - Validate changed canonical skills with `$CODEX_HOME/skills/.system/skill-creator/scripts/quick_validate.py`; when `CODEX_HOME` is unset, use `~/.codex/skills/.system/skill-creator/scripts/quick_validate.py`.
 
 ## Verification
 
-- Run `./install.sh -n ai` to verify the Stow changes before installing them.
+- Run `./install.sh -n agents` to verify the Stow changes before installing them.
