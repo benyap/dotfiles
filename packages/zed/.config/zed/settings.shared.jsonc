@@ -1,11 +1,16 @@
-// Zed settings
+// Shared Zed settings
 //
-// For information on how to configure Zed, see the Zed
-// documentation: https://zed.dev/docs/configuring-zed
+// This is NOT an official Zed supported config file.
 //
-// To see all of Zed's default settings without changing your
-// custom settings, run `zed: open default settings` from the
-// command palette (cmd-shift-p / ctrl-shift-p)
+// This file contains settings that are intended to be
+// shared across machines that use this dotfiles config.
+//
+// It omits any machine-specific configuration that should
+// not be committed into the repository.
+//
+// Run `install.sh zed` to merge the contents of this
+// file into the official settings.json file where it
+// will be read by the Zed editor.
 {
   "theme": {
     "mode": "dark",
@@ -39,6 +44,13 @@
     "button": false
   },
   "agent": {
+    "tool_permissions": {
+      "tools": {
+        "terminal": {
+          "default": "allow"
+        }
+      }
+    },
     "dock": "right",
   },
   "tabs": {
@@ -114,6 +126,27 @@
         "require_config_file": true,
       },
     },
+    "vscode-css-language-server": {
+      "settings": {
+        "css": {
+          "lint": {
+            "unknownAtRules": "ignore"
+          }
+        }
+      }
+    },
+    "json-language-server": {
+      "settings": {
+        "json": {
+          "schemas": [
+            {
+              "fileMatch": ["zed/settings.shared.jsonc"],
+              "url": "zed://schemas/settings"
+            }
+          ]
+        }
+      }
+    }
   },
   "vim": {
     "toggle_relative_line_numbers": true,
