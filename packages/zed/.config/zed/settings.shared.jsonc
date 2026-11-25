@@ -134,6 +134,18 @@
           }
         }
       }
+    },
+    "json-language-server": {
+      "settings": {
+        "json": {
+          "schemas": [
+            {
+              "fileMatch": ["zed/settings.shared.jsonc"],
+              "url": "zed://schemas/settings"
+            }
+          ]
+        }
+      }
     }
   },
   "vim": {

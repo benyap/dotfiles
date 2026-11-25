@@ -109,6 +109,41 @@ RUBY
         return 1
     fi
 
+    local diff_source="$settings"
+    [[ -f "$diff_source" ]] || diff_source="/dev/null"
+
+    if cmp -s "$diff_source" "$temporary"; then
+        rm -f "$temporary"
+        log "Zed settings are already up to date"
+        return 0
+    fi
+
+    if command -v git >/dev/null 2>&1; then
+        local diff_status=0
+        git --no-pager diff --no-index --color=always -- "$diff_source" "$temporary" || diff_status=$?
+        if [[ "$diff_status" -gt 1 ]]; then
+            rm -f "$temporary"
+            err "Failed to display the Zed settings diff"
+            return 1
+        fi
+    else
+        diff -u "$diff_source" "$temporary" || true
+    fi
+
+    local confirmation
+    if ! read -r -p "Apply this Zed settings merge? [y/N] " confirmation; then
+        echo
+        rm -f "$temporary"
+        warn "Zed settings merge cancelled"
+        return 0
+    fi
+
+    if [[ ! "$confirmation" =~ ^[Yy]$ ]]; then
+        rm -f "$temporary"
+        warn "Zed settings merge cancelled"
+        return 0
+    fi
+
     if [[ -f "$settings" ]]; then
         cp "$settings" "$backup"
     fi
