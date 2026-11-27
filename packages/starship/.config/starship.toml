@@ -3,7 +3,7 @@ format = "$sudo$username$directory$git_branch$git_commit$git_status$aws$gcloud$c
 [character]
 success_symbol ="[](bold green)"
 error_symbol = "[](bold bright-red)"
-vicmd_symbol = "[](bold green)"
+vicmd_symbol = "[](bold yellow)"
 
 [sudo]
 disabled = false

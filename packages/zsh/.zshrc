@@ -105,4 +105,5 @@ eval "$(zoxide init --cmd cd zsh)"
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
 # Use starship prompt
+bindkey -v
 eval "$(starship init zsh)"
