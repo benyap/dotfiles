@@ -13,6 +13,7 @@ return {
     },
   },
   opts = {
+    cmd = { "codex", "--profile", "shared" },
     keymaps = {
       toggle = nil, -- Keybind to toggle Codex window (Disabled by default, watch out for conflicts)
       quit = "<C-q>", -- Keybind to close the Codex window (default: Ctrl + q)

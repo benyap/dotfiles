@@ -1,0 +1,6 @@
+[tui]
+vim_mode_default = true
+
+[tui.model_availability_nux]
+"gpt-5.6-sol" = 4
+"gpt-6.1-sol" = 4
