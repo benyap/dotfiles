@@ -31,6 +31,7 @@ alias v="nvim"
 alias n="nvim"
 alias tf="terraform"
 alias tm="tmux new-session -A"
+alias codex="codex --profile shared"
 
 # Set up syntax helpers
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
