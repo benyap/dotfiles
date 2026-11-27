@@ -18,7 +18,7 @@
         "name": "Cancel"
       },
       "transcribe": {
-        "current_binding": "shift+space",
+        "current_binding": "shift_right+space",
         "default_binding": "option+space",
         "description": "Converts your speech into text.",
         "id": "transcribe",
