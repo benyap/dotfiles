@@ -232,8 +232,12 @@ resolve_conflict() {
 
   if [ -L "$target" ]; then
     if [ ! -e "$target" ]; then
-      log "Removing stale symlink: $target"
-      rm "$target"
+      if [ "$DRY_RUN" = "1" ]; then
+        log "Would remove stale symlink: $target"
+      else
+        log "Removing stale symlink: $target"
+        rm "$target"
+      fi
     fi
     return 0
   fi
