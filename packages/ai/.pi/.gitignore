@@ -1,0 +1,5 @@
+# Pi credentials and local state
+/agent/auth.json
+/agent/models-store.json
+/agent/sessions/
+/agent/settings.json
